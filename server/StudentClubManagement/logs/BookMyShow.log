@@ -1,0 +1,609 @@
+2025-01-23T18:19:47.583-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 34887 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-01-23T18:19:47.583-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-01-23T18:19:47.599-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-23T18:19:47.599-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-23T18:19:47.901-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-23T18:19:47.908-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-23T18:19:48.134-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-01-23T18:19:48.142-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-23T18:19:48.142-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-23T18:19:48.162-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring embedded WebApplicationContext
+2025-01-23T18:19:48.162-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 563 ms
+2025-01-23T18:19:48.234-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-23T18:19:48.263-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-01-23T18:19:48.279-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-23T18:19:48.387-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-23T18:19:48.401-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-23T18:19:48.512-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74f8d800
+2025-01-23T18:19:48.512-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-23T18:19:48.560-05:00  WARN 34887 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-23T18:19:48.566-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-23T18:19:48.661-05:00 ERROR 34887 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+2025-01-23T18:19:48.662-05:00  WARN 34887 --- [StudentClubManagement] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+2025-01-23T18:19:48.663-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-23T18:19:48.668-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-23T18:19:48.669-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-01-23T18:19:48.676-05:00  INFO 34887 --- [StudentClubManagement] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-23T18:19:48.684-05:00 ERROR 34887 --- [StudentClubManagement] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.studentclubmanagement.StudentClubManagementApplication.main(StudentClubManagementApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.2.jar:3.4.2]
+Caused by: org.hibernate.AnnotationException: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1638) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1652) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1613) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1604) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1842) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1800) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 18 common frames omitted
+
+2025-01-23T18:21:34.038-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 34906 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-01-23T18:21:34.039-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-01-23T18:21:34.056-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-23T18:21:34.057-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-23T18:21:34.367-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-23T18:21:34.374-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-23T18:21:34.590-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-01-23T18:21:34.596-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-23T18:21:34.597-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-23T18:21:34.613-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring embedded WebApplicationContext
+2025-01-23T18:21:34.613-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 556 ms
+2025-01-23T18:21:34.675-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-23T18:21:34.702-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-01-23T18:21:34.717-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-23T18:21:34.821-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-23T18:21:34.835-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-23T18:21:34.906-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2e992e0a
+2025-01-23T18:21:34.907-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-23T18:21:34.936-05:00  WARN 34906 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-23T18:21:34.942-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-23T18:21:35.027-05:00 ERROR 34906 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+2025-01-23T18:21:35.028-05:00  WARN 34906 --- [StudentClubManagement] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+2025-01-23T18:21:35.028-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-23T18:21:35.049-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-23T18:21:35.051-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-01-23T18:21:35.060-05:00  INFO 34906 --- [StudentClubManagement] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-23T18:21:35.070-05:00 ERROR 34906 --- [StudentClubManagement] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.studentclubmanagement.StudentClubManagementApplication.main(StudentClubManagementApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.2.jar:3.4.2]
+Caused by: org.hibernate.AnnotationException: Collection 'org.studentclubmanagement.models.User.announcements' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.Announcement'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1638) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1652) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1613) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1604) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1842) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1800) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 18 common frames omitted
+
+2025-01-23T18:22:46.438-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 34975 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-01-23T18:22:46.440-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-01-23T18:22:46.456-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-23T18:22:46.456-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-23T18:22:46.770-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-23T18:22:46.778-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-23T18:22:47.011-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-01-23T18:22:47.017-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-23T18:22:47.017-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-23T18:22:47.035-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring embedded WebApplicationContext
+2025-01-23T18:22:47.035-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 579 ms
+2025-01-23T18:22:47.105-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-23T18:22:47.134-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-01-23T18:22:47.149-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-23T18:22:47.254-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-23T18:22:47.268-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-23T18:22:47.340-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ff33a83
+2025-01-23T18:22:47.341-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-23T18:22:47.365-05:00  WARN 34975 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-23T18:22:47.371-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-23T18:22:47.455-05:00 ERROR 34975 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+2025-01-23T18:22:47.455-05:00  WARN 34975 --- [StudentClubManagement] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+2025-01-23T18:22:47.455-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-23T18:22:47.483-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-23T18:22:47.485-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-01-23T18:22:47.493-05:00  INFO 34975 --- [StudentClubManagement] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-23T18:22:47.502-05:00 ERROR 34975 --- [StudentClubManagement] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.studentclubmanagement.StudentClubManagementApplication.main(StudentClubManagementApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.2.jar:3.4.2]
+Caused by: org.hibernate.AnnotationException: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1638) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1652) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1613) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1604) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1842) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1800) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 18 common frames omitted
+
+2025-01-23T18:23:31.468-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 34989 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-01-23T18:23:31.469-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-01-23T18:23:31.487-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-23T18:23:31.487-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-23T18:23:31.787-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-23T18:23:31.795-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-23T18:23:32.008-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-01-23T18:23:32.014-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-23T18:23:32.015-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-23T18:23:32.032-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring embedded WebApplicationContext
+2025-01-23T18:23:32.032-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 545 ms
+2025-01-23T18:23:32.098-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-23T18:23:32.128-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-01-23T18:23:32.143-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-23T18:23:32.246-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-23T18:23:32.260-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-23T18:23:32.335-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ba5ada3
+2025-01-23T18:23:32.336-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-23T18:23:32.362-05:00  WARN 34989 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-23T18:23:32.369-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-23T18:23:32.449-05:00 ERROR 34989 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+2025-01-23T18:23:32.450-05:00  WARN 34989 --- [StudentClubManagement] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+2025-01-23T18:23:32.450-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-23T18:23:32.475-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-23T18:23:32.477-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-01-23T18:23:32.484-05:00  INFO 34989 --- [StudentClubManagement] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-23T18:23:32.493-05:00 ERROR 34989 --- [StudentClubManagement] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.studentclubmanagement.StudentClubManagementApplication.main(StudentClubManagementApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.2.jar:3.4.2]
+Caused by: org.hibernate.AnnotationException: Collection 'org.studentclubmanagement.models.User.clubAdminRequests' is 'mappedBy' a property named 'user' which does not exist in the target entity 'org.studentclubmanagement.models.ClubAdminRequest'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1638) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1652) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1613) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1604) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1842) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1800) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 18 common frames omitted
+
+2025-01-23T18:27:18.699-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 35053 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-01-23T18:27:18.700-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-01-23T18:27:18.718-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-23T18:27:18.718-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-23T18:27:19.029-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-23T18:27:19.037-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-23T18:27:19.251-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-01-23T18:27:19.257-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-23T18:27:19.257-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-23T18:27:19.273-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring embedded WebApplicationContext
+2025-01-23T18:27:19.273-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 554 ms
+2025-01-23T18:27:19.336-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-23T18:27:19.364-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-01-23T18:27:19.379-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-23T18:27:19.482-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-23T18:27:19.495-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-23T18:27:19.583-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e9564ca
+2025-01-23T18:27:19.584-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-23T18:27:19.616-05:00  WARN 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-23T18:27:19.622-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-23T18:27:20.050-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-23T18:27:20.091-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table announcement (
+        id bigint not null auto_increment,
+        content varchar(1000) not null,
+        created_at datetime(6),
+        title varchar(100) not null,
+        type enum ('ANNOUNCEMENT','EVENT') not null,
+        updated_at datetime(6),
+        club_id bigint not null,
+        user_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.116-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table answer (
+        answer_id bigint not null auto_increment,
+        answer varchar(255) not null,
+        created_at datetime(6),
+        updated_at datetime(6),
+        club_id bigint not null,
+        question_id bigint not null,
+        user_id bigint not null,
+        primary key (answer_id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.119-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table club (
+        club_id bigint not null auto_increment,
+        available_slots integer not null check (available_slots>=1),
+        club_name varchar(100) not null,
+        created_at datetime(6),
+        description varchar(500) not null,
+        no_of_members integer not null check (no_of_members>=0),
+        total_slots integer not null check (total_slots>=1),
+        updated_at datetime(6),
+        primary key (club_id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.124-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table club_admin_request (
+        request_id bigint not null auto_increment,
+        club_admin_approval_status enum ('APPROVED','PENDING','REJECTED'),
+        created_at datetime(6),
+        super_admin_approval_status enum ('APPROVED','PENDING','REJECTED'),
+        updated_at datetime(6),
+        club_id bigint not null,
+        club_admin_id bigint not null,
+        reviewer_id bigint not null,
+        primary key (request_id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.127-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table club_request (
+        id bigint not null auto_increment,
+        comment varchar(255) not null,
+        created_at datetime(6),
+        status enum ('APPROVED','PENDING','REJECTED') not null,
+        updated_at datetime(6),
+        club_id bigint not null,
+        user_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.130-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table question (
+        question_id bigint not null auto_increment,
+        created_at datetime(6),
+        question varchar(255) not null,
+        title varchar(255) not null,
+        updated_at datetime(6),
+        upvote_count integer not null,
+        club_id bigint,
+        user_id bigint not null,
+        primary key (question_id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.134-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table user (
+        user_id bigint not null auto_increment,
+        address varchar(200),
+        birthday date,
+        created_at datetime(6),
+        email varchar(255) not null,
+        first_name varchar(50) not null,
+        joined_clubs integer not null check ((joined_clubs>=0) and (joined_clubs<=3)),
+        last_name varchar(50) not null,
+        password varchar(20) not null,
+        phone varchar(255),
+        role enum ('CLUB_ADMIN','STUDENT','SUPER_ADMIN') not null,
+        updated_at datetime(6),
+        primary key (user_id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.139-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    create table user_club (
+        id bigint not null auto_increment,
+        joined_date datetime(6),
+        termination_date datetime(6),
+        updated_at datetime(6),
+        club_id bigint not null,
+        user_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB
+2025-01-23T18:27:20.144-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club 
+       drop index UKbpsde1igbj5ggar8gcnibkk77
+2025-01-23T18:27:20.464-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club 
+       add constraint UKbpsde1igbj5ggar8gcnibkk77 unique (club_name)
+2025-01-23T18:27:20.479-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table user 
+       drop index UKob8kqyqqgmefl0aco34akdtpe
+2025-01-23T18:27:20.483-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)
+2025-01-23T18:27:20.491-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table announcement 
+       add constraint FK7s74c9og10ht84qkip6j6pa4d 
+       foreign key (club_id) 
+       references club (club_id)
+2025-01-23T18:27:20.502-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table announcement 
+       add constraint FKiyptpr2q3m60hxqwto4rpe5uv 
+       foreign key (user_id) 
+       references user (user_id)
+2025-01-23T18:27:20.517-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table answer 
+       add constraint FKiqabx31ckn8nxdfg22vbcu4xr 
+       foreign key (club_id) 
+       references club (club_id)
+2025-01-23T18:27:20.525-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table answer 
+       add constraint FK8frr4bcabmmeyyu60qt7iiblo 
+       foreign key (question_id) 
+       references question (question_id)
+2025-01-23T18:27:20.533-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table answer 
+       add constraint FK68tbcw6bunvfjaoscaj851xpb 
+       foreign key (user_id) 
+       references user (user_id)
+2025-01-23T18:27:20.542-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club_admin_request 
+       add constraint FKj7jgnewieyuhsxwtfkjjufb5y 
+       foreign key (club_id) 
+       references club (club_id)
+2025-01-23T18:27:20.549-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club_admin_request 
+       add constraint FKcwa4t34hih170qbdbb6tirv3n 
+       foreign key (club_admin_id) 
+       references user (user_id)
+2025-01-23T18:27:20.559-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club_admin_request 
+       add constraint FKaos3edmlww25dn9rpqlb072a1 
+       foreign key (reviewer_id) 
+       references user (user_id)
+2025-01-23T18:27:20.567-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club_request 
+       add constraint FKp5mt2ycura4gd6qtop24roo35 
+       foreign key (club_id) 
+       references club (club_id)
+2025-01-23T18:27:20.573-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club_request 
+       add constraint FK1amy5gulul6lvr8weg6oxhx5o 
+       foreign key (user_id) 
+       references user (user_id)
+2025-01-23T18:27:20.580-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table question 
+       add constraint FKnjmf16mycutegr1fqoyas2e7k 
+       foreign key (club_id) 
+       references club (club_id)
+2025-01-23T18:27:20.587-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table question 
+       add constraint FK4ekrlbqiybwk8abhgclfjwnmc 
+       foreign key (user_id) 
+       references user (user_id)
+2025-01-23T18:27:20.596-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table user_club 
+       add constraint FK19ligkcbt4tyysc67dgny740d 
+       foreign key (club_id) 
+       references club (club_id)
+2025-01-23T18:27:20.601-05:00 DEBUG 35053 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table user_club 
+       add constraint FKtd07suaqoucsdeacwsqah2rs1 
+       foreign key (user_id) 
+       references user (user_id)
+2025-01-23T18:27:20.607-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-23T18:27:20.683-05:00  WARN 35053 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-23T18:27:20.852-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-01-23T18:27:20.884-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-01-23T18:27:20.942-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-23T18:27:20.959-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/scm'
+2025-01-23T18:27:20.964-05:00  INFO 35053 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 2.447 seconds (process running for 2.797)
+2025-01-23T18:47:47.410-05:00  INFO 35053 --- [StudentClubManagement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-23T18:47:47.427-05:00  INFO 35053 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-23T18:47:47.453-05:00  INFO 35053 --- [StudentClubManagement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-23T18:47:47.469-05:00  INFO 35053 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-23T18:47:47.493-05:00  INFO 35053 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-23T18:54:33.023-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 35374 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-01-23T18:54:33.024-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-01-23T18:54:33.041-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-23T18:54:33.041-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-23T18:54:33.358-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-23T18:54:33.366-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-23T18:54:33.585-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-01-23T18:54:33.591-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-23T18:54:33.591-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-23T18:54:33.608-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring embedded WebApplicationContext
+2025-01-23T18:54:33.608-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 567 ms
+2025-01-23T18:54:33.670-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-23T18:54:33.700-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-01-23T18:54:33.714-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-23T18:54:33.816-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-23T18:54:33.829-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-23T18:54:33.924-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f7630e4
+2025-01-23T18:54:33.925-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-23T18:54:33.953-05:00  WARN 35374 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-23T18:54:33.959-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-23T18:54:34.385-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-23T18:54:34.458-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-23T18:54:34.516-05:00  WARN 35374 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-23T18:54:34.677-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-01-23T18:54:34.709-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-01-23T18:54:34.764-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-23T18:54:34.781-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/scm'
+2025-01-23T18:54:34.786-05:00  INFO 35374 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 1.927 seconds (process running for 2.262)
+2025-01-23T18:54:39.091-05:00  INFO 35374 --- [StudentClubManagement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-23T18:54:39.094-05:00  INFO 35374 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-23T18:54:39.098-05:00  INFO 35374 --- [StudentClubManagement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-23T18:54:39.100-05:00  INFO 35374 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-23T18:54:39.104-05:00  INFO 35374 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-23T19:12:17.577-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 35703 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-01-23T19:12:17.578-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-01-23T19:12:17.596-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-23T19:12:17.596-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-23T19:12:17.919-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-23T19:12:17.942-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 8 JPA repository interfaces.
+2025-01-23T19:12:18.183-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-01-23T19:12:18.190-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-23T19:12:18.190-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-23T19:12:18.213-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring embedded WebApplicationContext
+2025-01-23T19:12:18.213-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 617 ms
+2025-01-23T19:12:18.296-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-23T19:12:18.333-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-01-23T19:12:18.349-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-23T19:12:18.470-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-23T19:12:18.482-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-23T19:12:18.573-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@402f0a70
+2025-01-23T19:12:18.573-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-23T19:12:18.603-05:00  WARN 35703 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-23T19:12:18.609-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-23T19:12:19.046-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-23T19:12:19.128-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-23T19:12:19.308-05:00  WARN 35703 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-23T19:12:19.473-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-01-23T19:12:19.505-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-01-23T19:12:19.568-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-23T19:12:19.588-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/scm'
+2025-01-23T19:12:19.594-05:00  INFO 35703 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 2.187 seconds (process running for 2.524)
+2025-01-23T19:12:41.688-05:00  INFO 35703 --- [StudentClubManagement] [http-nio-8261-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/scm]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-23T19:12:41.689-05:00  INFO 35703 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-23T19:12:41.690-05:00  INFO 35703 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-01-23T19:14:44.910-05:00  INFO 35703 --- [StudentClubManagement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-23T19:14:44.914-05:00  INFO 35703 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-23T19:14:44.919-05:00  INFO 35703 --- [StudentClubManagement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-23T19:14:44.923-05:00  INFO 35703 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-23T19:14:44.928-05:00  INFO 35703 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
