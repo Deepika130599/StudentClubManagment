@@ -29,6 +29,10 @@ public class Club {
     @Min(value = 1, message = "Total slots must be at least 1")
     private int totalSlots;
 
+    @OneToOne
+    @JoinColumn(name = "club_admin_user_id")
+    private User clubAdmin;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -49,6 +53,14 @@ public class Club {
 
     @OneToMany(mappedBy = "club", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ClubAdminRequest> clubAdminRequests;
+
+    public User getClubAdmin() {
+        return clubAdmin;
+    }
+
+    public void setClubAdmin(User clubAdmin) {
+        this.clubAdmin = clubAdmin;
+    }
 
     @PrePersist
     protected void onCreate() {

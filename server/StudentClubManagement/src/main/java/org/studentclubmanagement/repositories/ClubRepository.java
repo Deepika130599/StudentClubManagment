@@ -6,6 +6,5 @@ import org.studentclubmanagement.models.*;
 
 @Repository
 public interface ClubRepository extends JpaRepository<Club, Long> {
-    // Custom query methods if needed
     Club findByClubName(String clubName);
 }

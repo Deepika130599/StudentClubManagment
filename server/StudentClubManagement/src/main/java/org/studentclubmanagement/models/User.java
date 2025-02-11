@@ -47,6 +47,9 @@ public class User {
     @Max(value = 3, message = "A user can join a maximum of 3 clubs")
     private int joinedClubs = 0;
 
+    @OneToOne(mappedBy = "clubAdmin", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Club club;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

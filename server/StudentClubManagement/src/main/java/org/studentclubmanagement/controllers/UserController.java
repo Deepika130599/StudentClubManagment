@@ -1,5 +1,6 @@
 package org.studentclubmanagement.controllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@Tag(name = "User APIs", description = "Operations related to users")
 public class UserController {
 
     @Autowired

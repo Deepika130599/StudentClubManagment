@@ -748,3 +748,2685 @@
 2025-01-23T19:44:37.379-05:00  INFO 36242 --- [StudentClubManagement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-01-23T19:44:37.383-05:00  INFO 36242 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-01-23T19:44:37.391-05:00  INFO 36242 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-11T17:50:40.860-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 23413 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T17:50:40.861-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T17:50:40.877-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-11T17:50:40.877-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-11T17:50:41.202-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T17:50:41.229-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 8 JPA repository interfaces.
+2025-02-11T17:50:41.454-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T17:50:41.460-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T17:50:41.460-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T17:50:41.478-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T17:50:41.479-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 600 ms
+2025-02-11T17:50:41.548-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T17:50:41.575-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-11T17:50:41.588-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T17:50:41.697-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T17:50:41.712-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-11T17:50:41.811-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fa05a6e
+2025-02-11T17:50:41.812-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-11T17:50:41.857-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T17:50:41.865-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T17:50:42.313-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T17:50:42.347-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club 
+       add column club_admin_user_id bigint
+2025-02-11T17:50:42.383-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club 
+       drop index UKkn7xg6ewjhqefjc103ufgld2u
+2025-02-11T17:50:42.699-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club 
+       add constraint UKkn7xg6ewjhqefjc103ufgld2u unique (club_admin_user_id)
+2025-02-11T17:50:42.735-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.SQL                        : 
+    alter table club 
+       add constraint FK82uj8ts2u4o3hhpywsmd05x67 
+       foreign key (club_admin_user_id) 
+       references user (user_id)
+2025-02-11T17:50:42.773-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T17:50:42.953-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T17:50:42.972-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T17:50:43.073-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T17:50:43.185-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T17:50:43.205-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T17:50:43.224-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T17:50:43.230-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 2.531 seconds (process running for 2.971)
+2025-02-11T17:50:49.464-05:00  INFO 23413 --- [StudentClubManagement] [http-nio-8261-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-11T17:50:49.465-05:00  INFO 23413 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-11T17:50:49.469-05:00  INFO 23413 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-02-11T17:50:49.478-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2025-02-11T17:50:49.482-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2025-02-11T17:50:49.500-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.518-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
+2025-02-11T17:50:49.518-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
+2025-02-11T17:50:49.522-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-02-11T17:50:49.525-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2025-02-11T17:50:49.527-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.531-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.544-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.551-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.631-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api-docs/swagger-config
+2025-02-11T17:50:49.631-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api-docs/swagger-config
+2025-02-11T17:50:49.632-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
+2025-02-11T17:50:49.633-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
+2025-02-11T17:50:49.634-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.646-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:50:49.656-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api-docs
+2025-02-11T17:50:49.657-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api-docs
+2025-02-11T17:50:50.013-05:00  INFO 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 349 ms
+2025-02-11T17:50:50.019-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:51:56.769-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/clubs
+2025-02-11T17:51:56.771-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/clubs
+2025-02-11T17:51:56.853-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c1_0.club_id,
+        c1_0.available_slots,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        user u1_0 
+    left join
+        club c1_0 
+            on u1_0.user_id=c1_0.club_admin_user_id 
+    where
+        u1_0.user_id=?
+2025-02-11T17:51:56.881-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        club
+        (available_slots, club_admin_user_id, club_name, created_at, description, no_of_members, total_slots, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-02-11T17:51:56.900-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    select
+        uc1_0.user_id,
+        uc1_0.id,
+        uc1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        uc1_0.joined_date,
+        uc1_0.termination_date,
+        uc1_0.updated_at 
+    from
+        user_club uc1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=uc1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        uc1_0.user_id=?
+2025-02-11T17:51:56.908-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    select
+        cr1_0.user_id,
+        cr1_0.id,
+        cr1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        cr1_0.comment,
+        cr1_0.created_at,
+        cr1_0.status,
+        cr1_0.updated_at 
+    from
+        club_request cr1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=cr1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        cr1_0.user_id=?
+2025-02-11T17:51:56.912-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.id,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.title,
+        a1_0.type,
+        a1_0.updated_at 
+    from
+        announcement a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T17:51:56.915-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    select
+        q1_0.user_id,
+        q1_0.question_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count 
+    from
+        question q1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=q1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        q1_0.user_id=?
+2025-02-11T17:51:56.918-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.answer_id,
+        a1_0.answer,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.created_at,
+        a1_0.question_id,
+        q1_0.question_id,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_admin_user_id,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at,
+        a1_0.updated_at 
+    from
+        answer a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        question q1_0 
+            on q1_0.question_id=a1_0.question_id 
+    left join
+        club c2_0 
+            on c2_0.club_id=q1_0.club_id 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T17:51:56.921-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] org.hibernate.SQL                        : 
+    select
+        car1_0.club_admin_id,
+        car1_0.request_id,
+        car1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        car1_0.club_admin_approval_status,
+        car1_0.created_at,
+        car1_0.reviewer_id,
+        r1_0.user_id,
+        r1_0.address,
+        r1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        r1_0.created_at,
+        r1_0.email,
+        r1_0.first_name,
+        r1_0.joined_clubs,
+        r1_0.last_name,
+        r1_0.password,
+        r1_0.phone,
+        r1_0.role,
+        r1_0.updated_at,
+        car1_0.super_admin_approval_status,
+        car1_0.updated_at 
+    from
+        club_admin_request car1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=car1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        user r1_0 
+            on r1_0.user_id=car1_0.reviewer_id 
+    left join
+        club c2_0 
+            on r1_0.user_id=c2_0.club_admin_user_id 
+    where
+        car1_0.club_admin_id=?
+2025-02-11T17:51:56.925-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:53:02.939-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/clubs
+2025-02-11T17:53:02.941-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/clubs
+2025-02-11T17:53:03.038-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.club_id,
+        c1_0.available_slots,
+        c1_0.club_admin_user_id,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at 
+    from
+        club c1_0
+2025-02-11T17:53:03.045-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c1_0.club_id,
+        c1_0.available_slots,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        user u1_0 
+    left join
+        club c1_0 
+            on u1_0.user_id=c1_0.club_admin_user_id 
+    where
+        u1_0.user_id=?
+2025-02-11T17:53:03.052-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        uc1_0.user_id,
+        uc1_0.id,
+        uc1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        uc1_0.joined_date,
+        uc1_0.termination_date,
+        uc1_0.updated_at 
+    from
+        user_club uc1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=uc1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        uc1_0.user_id=?
+2025-02-11T17:53:03.053-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        cr1_0.user_id,
+        cr1_0.id,
+        cr1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        cr1_0.comment,
+        cr1_0.created_at,
+        cr1_0.status,
+        cr1_0.updated_at 
+    from
+        club_request cr1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=cr1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        cr1_0.user_id=?
+2025-02-11T17:53:03.054-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.id,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.title,
+        a1_0.type,
+        a1_0.updated_at 
+    from
+        announcement a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T17:53:03.055-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        q1_0.user_id,
+        q1_0.question_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count 
+    from
+        question q1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=q1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        q1_0.user_id=?
+2025-02-11T17:53:03.056-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.answer_id,
+        a1_0.answer,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.created_at,
+        a1_0.question_id,
+        q1_0.question_id,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_admin_user_id,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at,
+        a1_0.updated_at 
+    from
+        answer a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        question q1_0 
+            on q1_0.question_id=a1_0.question_id 
+    left join
+        club c2_0 
+            on c2_0.club_id=q1_0.club_id 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T17:53:03.058-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        car1_0.club_admin_id,
+        car1_0.request_id,
+        car1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        car1_0.club_admin_approval_status,
+        car1_0.created_at,
+        car1_0.reviewer_id,
+        r1_0.user_id,
+        r1_0.address,
+        r1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        r1_0.created_at,
+        r1_0.email,
+        r1_0.first_name,
+        r1_0.joined_clubs,
+        r1_0.last_name,
+        r1_0.password,
+        r1_0.phone,
+        r1_0.role,
+        r1_0.updated_at,
+        car1_0.super_admin_approval_status,
+        car1_0.updated_at 
+    from
+        club_admin_request car1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=car1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        user r1_0 
+            on r1_0.user_id=car1_0.reviewer_id 
+    left join
+        club c2_0 
+            on r1_0.user_id=c2_0.club_admin_user_id 
+    where
+        car1_0.club_admin_id=?
+2025-02-11T17:53:03.059-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        uc1_0.club_id,
+        uc1_0.id,
+        uc1_0.joined_date,
+        uc1_0.termination_date,
+        uc1_0.updated_at,
+        uc1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        user_club uc1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=uc1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        uc1_0.club_id=?
+2025-02-11T17:53:03.061-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        a1_0.club_id,
+        a1_0.id,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.user_id,
+        pb1_0.user_id,
+        pb1_0.address,
+        pb1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        pb1_0.created_at,
+        pb1_0.email,
+        pb1_0.first_name,
+        pb1_0.joined_clubs,
+        pb1_0.last_name,
+        pb1_0.password,
+        pb1_0.phone,
+        pb1_0.role,
+        pb1_0.updated_at,
+        a1_0.title,
+        a1_0.type,
+        a1_0.updated_at 
+    from
+        announcement a1_0 
+    left join
+        user pb1_0 
+            on pb1_0.user_id=a1_0.user_id 
+    left join
+        club c2_0 
+            on pb1_0.user_id=c2_0.club_admin_user_id 
+    where
+        a1_0.club_id=?
+2025-02-11T17:53:03.062-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        r1_0.club_id,
+        r1_0.id,
+        r1_0.comment,
+        r1_0.created_at,
+        r1_0.status,
+        r1_0.updated_at,
+        r1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        club_request r1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=r1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        r1_0.club_id=?
+2025-02-11T17:53:03.064-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        q1_0.club_id,
+        q1_0.question_id,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        question q1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        q1_0.club_id=?
+2025-02-11T17:53:03.064-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        a1_0.club_id,
+        a1_0.answer_id,
+        a1_0.answer,
+        a1_0.created_at,
+        a1_0.question_id,
+        q1_0.question_id,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_admin_user_id,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at,
+        a1_0.updated_at,
+        a1_0.user_id,
+        u2_0.user_id,
+        u2_0.address,
+        u2_0.birthday,
+        c3_0.club_id,
+        c3_0.available_slots,
+        c3_0.club_name,
+        c3_0.created_at,
+        c3_0.description,
+        c3_0.no_of_members,
+        c3_0.total_slots,
+        c3_0.updated_at,
+        u2_0.created_at,
+        u2_0.email,
+        u2_0.first_name,
+        u2_0.joined_clubs,
+        u2_0.last_name,
+        u2_0.password,
+        u2_0.phone,
+        u2_0.role,
+        u2_0.updated_at 
+    from
+        answer a1_0 
+    left join
+        question q1_0 
+            on q1_0.question_id=a1_0.question_id 
+    left join
+        club c2_0 
+            on c2_0.club_id=q1_0.club_id 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    left join
+        user u2_0 
+            on u2_0.user_id=a1_0.user_id 
+    left join
+        club c3_0 
+            on u2_0.user_id=c3_0.club_admin_user_id 
+    where
+        a1_0.club_id=?
+2025-02-11T17:53:03.066-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] org.hibernate.SQL                        : 
+    select
+        car1_0.club_id,
+        car1_0.request_id,
+        car1_0.club_admin_id,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        car1_0.club_admin_approval_status,
+        car1_0.created_at,
+        car1_0.reviewer_id,
+        r1_0.user_id,
+        r1_0.address,
+        r1_0.birthday,
+        c3_0.club_id,
+        c3_0.available_slots,
+        c3_0.club_name,
+        c3_0.created_at,
+        c3_0.description,
+        c3_0.no_of_members,
+        c3_0.total_slots,
+        c3_0.updated_at,
+        r1_0.created_at,
+        r1_0.email,
+        r1_0.first_name,
+        r1_0.joined_clubs,
+        r1_0.last_name,
+        r1_0.password,
+        r1_0.phone,
+        r1_0.role,
+        r1_0.updated_at,
+        car1_0.super_admin_approval_status,
+        car1_0.updated_at 
+    from
+        club_admin_request car1_0 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=car1_0.club_admin_id 
+    left join
+        club c2_0 
+            on ca1_0.user_id=c2_0.club_admin_user_id 
+    left join
+        user r1_0 
+            on r1_0.user_id=car1_0.reviewer_id 
+    left join
+        club c3_0 
+            on r1_0.user_id=c3_0.club_admin_user_id 
+    where
+        car1_0.club_id=?
+2025-02-11T17:53:03.068-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:53:14.739-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/clubs/1
+2025-02-11T17:53:14.740-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/clubs/1
+2025-02-11T17:53:14.744-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at 
+    from
+        club c1_0 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        c1_0.club_id=?
+2025-02-11T17:53:14.750-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        uc1_0.user_id,
+        uc1_0.id,
+        uc1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        uc1_0.joined_date,
+        uc1_0.termination_date,
+        uc1_0.updated_at 
+    from
+        user_club uc1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=uc1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        uc1_0.user_id=?
+2025-02-11T17:53:14.753-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        cr1_0.user_id,
+        cr1_0.id,
+        cr1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        cr1_0.comment,
+        cr1_0.created_at,
+        cr1_0.status,
+        cr1_0.updated_at 
+    from
+        club_request cr1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=cr1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        cr1_0.user_id=?
+2025-02-11T17:53:14.754-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.id,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.title,
+        a1_0.type,
+        a1_0.updated_at 
+    from
+        announcement a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T17:53:14.756-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        q1_0.user_id,
+        q1_0.question_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count 
+    from
+        question q1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=q1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        q1_0.user_id=?
+2025-02-11T17:53:14.757-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.answer_id,
+        a1_0.answer,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.created_at,
+        a1_0.question_id,
+        q1_0.question_id,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_admin_user_id,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at,
+        a1_0.updated_at 
+    from
+        answer a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        question q1_0 
+            on q1_0.question_id=a1_0.question_id 
+    left join
+        club c2_0 
+            on c2_0.club_id=q1_0.club_id 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T17:53:14.759-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        car1_0.club_admin_id,
+        car1_0.request_id,
+        car1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        car1_0.club_admin_approval_status,
+        car1_0.created_at,
+        car1_0.reviewer_id,
+        r1_0.user_id,
+        r1_0.address,
+        r1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        r1_0.created_at,
+        r1_0.email,
+        r1_0.first_name,
+        r1_0.joined_clubs,
+        r1_0.last_name,
+        r1_0.password,
+        r1_0.phone,
+        r1_0.role,
+        r1_0.updated_at,
+        car1_0.super_admin_approval_status,
+        car1_0.updated_at 
+    from
+        club_admin_request car1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=car1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        user r1_0 
+            on r1_0.user_id=car1_0.reviewer_id 
+    left join
+        club c2_0 
+            on r1_0.user_id=c2_0.club_admin_user_id 
+    where
+        car1_0.club_admin_id=?
+2025-02-11T17:53:14.761-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        uc1_0.club_id,
+        uc1_0.id,
+        uc1_0.joined_date,
+        uc1_0.termination_date,
+        uc1_0.updated_at,
+        uc1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        user_club uc1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=uc1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        uc1_0.club_id=?
+2025-02-11T17:53:14.762-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.club_id,
+        a1_0.id,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.user_id,
+        pb1_0.user_id,
+        pb1_0.address,
+        pb1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        pb1_0.created_at,
+        pb1_0.email,
+        pb1_0.first_name,
+        pb1_0.joined_clubs,
+        pb1_0.last_name,
+        pb1_0.password,
+        pb1_0.phone,
+        pb1_0.role,
+        pb1_0.updated_at,
+        a1_0.title,
+        a1_0.type,
+        a1_0.updated_at 
+    from
+        announcement a1_0 
+    left join
+        user pb1_0 
+            on pb1_0.user_id=a1_0.user_id 
+    left join
+        club c2_0 
+            on pb1_0.user_id=c2_0.club_admin_user_id 
+    where
+        a1_0.club_id=?
+2025-02-11T17:53:14.770-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        r1_0.club_id,
+        r1_0.id,
+        r1_0.comment,
+        r1_0.created_at,
+        r1_0.status,
+        r1_0.updated_at,
+        r1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        club_request r1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=r1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        r1_0.club_id=?
+2025-02-11T17:53:14.772-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        q1_0.club_id,
+        q1_0.question_id,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        question q1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        q1_0.club_id=?
+2025-02-11T17:53:14.773-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.club_id,
+        a1_0.answer_id,
+        a1_0.answer,
+        a1_0.created_at,
+        a1_0.question_id,
+        q1_0.question_id,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_admin_user_id,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at,
+        a1_0.updated_at,
+        a1_0.user_id,
+        u2_0.user_id,
+        u2_0.address,
+        u2_0.birthday,
+        c3_0.club_id,
+        c3_0.available_slots,
+        c3_0.club_name,
+        c3_0.created_at,
+        c3_0.description,
+        c3_0.no_of_members,
+        c3_0.total_slots,
+        c3_0.updated_at,
+        u2_0.created_at,
+        u2_0.email,
+        u2_0.first_name,
+        u2_0.joined_clubs,
+        u2_0.last_name,
+        u2_0.password,
+        u2_0.phone,
+        u2_0.role,
+        u2_0.updated_at 
+    from
+        answer a1_0 
+    left join
+        question q1_0 
+            on q1_0.question_id=a1_0.question_id 
+    left join
+        club c2_0 
+            on c2_0.club_id=q1_0.club_id 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    left join
+        user u2_0 
+            on u2_0.user_id=a1_0.user_id 
+    left join
+        club c3_0 
+            on u2_0.user_id=c3_0.club_admin_user_id 
+    where
+        a1_0.club_id=?
+2025-02-11T17:53:14.775-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] org.hibernate.SQL                        : 
+    select
+        car1_0.club_id,
+        car1_0.request_id,
+        car1_0.club_admin_id,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        car1_0.club_admin_approval_status,
+        car1_0.created_at,
+        car1_0.reviewer_id,
+        r1_0.user_id,
+        r1_0.address,
+        r1_0.birthday,
+        c3_0.club_id,
+        c3_0.available_slots,
+        c3_0.club_name,
+        c3_0.created_at,
+        c3_0.description,
+        c3_0.no_of_members,
+        c3_0.total_slots,
+        c3_0.updated_at,
+        r1_0.created_at,
+        r1_0.email,
+        r1_0.first_name,
+        r1_0.joined_clubs,
+        r1_0.last_name,
+        r1_0.password,
+        r1_0.phone,
+        r1_0.role,
+        r1_0.updated_at,
+        car1_0.super_admin_approval_status,
+        car1_0.updated_at 
+    from
+        club_admin_request car1_0 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=car1_0.club_admin_id 
+    left join
+        club c2_0 
+            on ca1_0.user_id=c2_0.club_admin_user_id 
+    left join
+        user r1_0 
+            on r1_0.user_id=car1_0.reviewer_id 
+    left join
+        club c3_0 
+            on r1_0.user_id=c3_0.club_admin_user_id 
+    where
+        car1_0.club_id=?
+2025-02-11T17:53:14.777-05:00 DEBUG 23413 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T17:55:38.924-05:00  INFO 23413 --- [StudentClubManagement] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-11T17:55:38.945-05:00  INFO 23413 --- [StudentClubManagement] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T17:55:38.954-05:00  INFO 23413 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T17:55:38.965-05:00  INFO 23413 --- [StudentClubManagement] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T17:55:38.970-05:00  INFO 23413 --- [StudentClubManagement] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-11T17:55:38.983-05:00  INFO 23413 --- [StudentClubManagement] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-11T17:55:39.051-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 23413 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T17:55:39.051-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T17:55:39.158-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T17:55:39.168-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 8 JPA repository interfaces.
+2025-02-11T17:55:39.244-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T17:55:39.248-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T17:55:39.248-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T17:55:39.254-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T17:55:39.254-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 203 ms
+2025-02-11T17:55:39.282-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T17:55:39.284-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T17:55:39.289-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T17:55:39.290-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-02-11T17:55:39.296-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@98f5828
+2025-02-11T17:55:39.296-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-02-11T17:55:39.297-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T17:55:39.297-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T17:55:39.386-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T17:55:39.443-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T17:55:39.499-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T17:55:39.504-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T17:55:39.540-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T17:55:39.591-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T17:55:39.598-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T17:55:39.607-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T17:55:39.609-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 0.572 seconds (process running for 299.35)
+2025-02-11T17:55:39.610-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-02-11T17:58:42.003-05:00  INFO 23413 --- [StudentClubManagement] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-11T17:58:42.014-05:00  INFO 23413 --- [StudentClubManagement] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T17:58:42.019-05:00  INFO 23413 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T17:58:42.025-05:00  INFO 23413 --- [StudentClubManagement] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T17:58:42.029-05:00  INFO 23413 --- [StudentClubManagement] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-02-11T17:58:42.031-05:00  INFO 23413 --- [StudentClubManagement] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-02-11T17:58:42.106-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 23413 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T17:58:42.106-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T17:58:42.193-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T17:58:42.199-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 8 JPA repository interfaces.
+2025-02-11T17:58:42.267-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T17:58:42.268-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T17:58:42.268-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T17:58:42.274-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T17:58:42.274-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 167 ms
+2025-02-11T17:58:42.303-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T17:58:42.304-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T17:58:42.309-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T17:58:42.309-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-02-11T17:58:42.344-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b8b05d0
+2025-02-11T17:58:42.344-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-02-11T17:58:42.345-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T17:58:42.345-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T17:58:42.410-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T17:58:42.460-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T17:58:42.517-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T17:58:42.522-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T17:58:42.559-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T17:58:42.616-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T17:58:42.623-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T17:58:42.630-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T17:58:42.632-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 0.54 seconds (process running for 482.371)
+2025-02-11T17:58:42.632-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-02-11T18:00:02.325-05:00  INFO 23413 --- [StudentClubManagement] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-11T18:00:02.337-05:00  INFO 23413 --- [StudentClubManagement] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T18:00:02.343-05:00  INFO 23413 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T18:00:02.350-05:00  INFO 23413 --- [StudentClubManagement] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:00:02.354-05:00  INFO 23413 --- [StudentClubManagement] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-02-11T18:00:02.356-05:00  INFO 23413 --- [StudentClubManagement] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-02-11T18:00:02.437-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 23413 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T18:00:02.437-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T18:00:02.518-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T18:00:02.524-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 8 JPA repository interfaces.
+2025-02-11T18:00:02.599-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T18:00:02.599-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T18:00:02.599-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T18:00:02.606-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T18:00:02.606-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 168 ms
+2025-02-11T18:00:02.644-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T18:00:02.645-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T18:00:02.649-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T18:00:02.650-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-02-11T18:00:02.655-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@531570ac
+2025-02-11T18:00:02.655-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-02-11T18:00:02.656-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T18:00:02.656-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T18:00:02.726-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T18:00:02.799-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:00:02.862-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T18:00:02.867-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T18:00:02.908-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T18:00:02.957-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T18:00:02.963-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T18:00:02.970-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T18:00:02.972-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 0.546 seconds (process running for 562.711)
+2025-02-11T18:00:02.972-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-02-11T18:00:31.668-05:00  INFO 23413 --- [StudentClubManagement] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-02-11T18:00:31.680-05:00  INFO 23413 --- [StudentClubManagement] [Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T18:00:31.682-05:00  INFO 23413 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T18:00:31.685-05:00  INFO 23413 --- [StudentClubManagement] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:00:31.691-05:00  INFO 23413 --- [StudentClubManagement] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-02-11T18:00:31.692-05:00  INFO 23413 --- [StudentClubManagement] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-02-11T18:00:31.765-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 23413 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T18:00:31.765-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T18:00:31.839-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T18:00:31.844-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 8 JPA repository interfaces.
+2025-02-11T18:00:31.892-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T18:00:31.892-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T18:00:31.893-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T18:00:31.897-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T18:00:31.897-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 131 ms
+2025-02-11T18:00:31.915-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T18:00:31.915-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T18:00:31.919-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T18:00:31.919-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-02-11T18:00:31.923-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55bb7272
+2025-02-11T18:00:31.925-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-02-11T18:00:31.926-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T18:00:31.926-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T18:00:31.992-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T18:00:32.042-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:00:32.084-05:00  WARN 23413 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T18:00:32.088-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T18:00:32.119-05:00 DEBUG 23413 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T18:00:32.163-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T18:00:32.168-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T18:00:32.177-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T18:00:32.179-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 0.426 seconds (process running for 591.918)
+2025-02-11T18:00:32.180-05:00  INFO 23413 --- [StudentClubManagement] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-02-11T18:00:55.962-05:00  INFO 23413 --- [StudentClubManagement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T18:00:55.964-05:00  INFO 23413 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T18:00:55.965-05:00  INFO 23413 --- [StudentClubManagement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:00:55.967-05:00  INFO 23413 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-02-11T18:00:55.967-05:00  INFO 23413 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-02-11T18:00:57.739-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 23545 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T18:00:57.740-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T18:00:57.756-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-11T18:00:57.756-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-11T18:00:58.070-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T18:00:58.094-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 8 JPA repository interfaces.
+2025-02-11T18:00:58.319-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T18:00:58.325-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T18:00:58.326-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T18:00:58.343-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T18:00:58.343-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 586 ms
+2025-02-11T18:00:58.410-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T18:00:58.439-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-11T18:00:58.453-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T18:00:58.554-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T18:00:58.567-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-11T18:00:58.641-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f80acf1
+2025-02-11T18:00:58.642-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-11T18:00:58.668-05:00  WARN 23545 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T18:00:58.674-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T18:00:59.102-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T18:00:59.191-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:00:59.368-05:00  WARN 23545 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T18:00:59.385-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T18:00:59.485-05:00 DEBUG 23545 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T18:00:59.600-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T18:00:59.621-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T18:00:59.640-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T18:00:59.645-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 2.083 seconds (process running for 2.391)
+2025-02-11T18:01:05.612-05:00  INFO 23545 --- [StudentClubManagement] [http-nio-8261-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-11T18:01:05.613-05:00  INFO 23545 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-11T18:01:05.620-05:00  INFO 23545 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-02-11T18:01:05.630-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2025-02-11T18:01:05.634-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2025-02-11T18:01:05.664-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.724-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
+2025-02-11T18:01:05.725-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
+2025-02-11T18:01:05.728-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.728-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
+2025-02-11T18:01:05.729-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-02-11T18:01:05.729-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2025-02-11T18:01:05.729-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-02-11T18:01:05.729-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2025-02-11T18:01:05.729-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
+2025-02-11T18:01:05.729-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-02-11T18:01:05.729-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-02-11T18:01:05.732-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.737-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.746-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.752-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.824-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api-docs/swagger-config
+2025-02-11T18:01:05.824-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api-docs/swagger-config
+2025-02-11T18:01:05.828-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
+2025-02-11T18:01:05.829-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
+2025-02-11T18:01:05.831-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.846-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:01:05.861-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api-docs
+2025-02-11T18:01:05.862-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api-docs
+2025-02-11T18:01:06.201-05:00  INFO 23545 --- [StudentClubManagement] [http-nio-8261-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 329 ms
+2025-02-11T18:01:06.206-05:00 DEBUG 23545 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:05:09.683-05:00  INFO 23545 --- [StudentClubManagement] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-02-11T18:05:09.713-05:00  INFO 23545 --- [StudentClubManagement] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T18:05:09.724-05:00  INFO 23545 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T18:05:09.733-05:00  INFO 23545 --- [StudentClubManagement] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:05:09.737-05:00  INFO 23545 --- [StudentClubManagement] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-11T18:05:09.748-05:00  INFO 23545 --- [StudentClubManagement] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-11T18:05:09.850-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 23545 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T18:05:09.850-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T18:05:09.960-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T18:05:09.968-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 8 JPA repository interfaces.
+2025-02-11T18:05:10.040-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T18:05:10.041-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T18:05:10.041-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T18:05:10.047-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T18:05:10.047-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 196 ms
+2025-02-11T18:05:10.080-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T18:05:10.081-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T18:05:10.086-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T18:05:10.087-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-02-11T18:05:10.119-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21ea9bf8
+2025-02-11T18:05:10.119-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-02-11T18:05:10.120-05:00  WARN 23545 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T18:05:10.120-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T18:05:10.222-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T18:05:10.273-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:05:10.325-05:00  WARN 23545 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T18:05:10.329-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T18:05:10.364-05:00 DEBUG 23545 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T18:05:10.410-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T18:05:10.415-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T18:05:10.425-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T18:05:10.427-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 0.59 seconds (process running for 253.172)
+2025-02-11T18:05:10.428-05:00  INFO 23545 --- [StudentClubManagement] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-02-11T18:08:55.269-05:00  INFO 23545 --- [StudentClubManagement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T18:08:55.271-05:00  INFO 23545 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T18:08:55.274-05:00  INFO 23545 --- [StudentClubManagement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:08:55.280-05:00  INFO 23545 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-02-11T18:08:55.280-05:00  INFO 23545 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-02-11T18:08:57.126-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Starting StudentClubManagementApplication using Java 21 with PID 25434 (/Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement/target/classes started by ranjith in /Users/ranjith/Desktop/Projects/SCM/StudentClubManagment/server/StudentClubManagement)
+2025-02-11T18:08:57.127-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-11T18:08:57.143-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-11T18:08:57.143-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-11T18:08:57.462-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-11T18:08:57.487-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 8 JPA repository interfaces.
+2025-02-11T18:08:57.714-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8261 (http)
+2025-02-11T18:08:57.720-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-11T18:08:57.720-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-11T18:08:57.739-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-11T18:08:57.739-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2025-02-11T18:08:57.809-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-11T18:08:57.836-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-11T18:08:57.849-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-11T18:08:57.951-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-11T18:08:57.965-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-11T18:08:58.036-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49555c22
+2025-02-11T18:08:58.037-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-11T18:08:58.064-05:00  WARN 25434 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-11T18:08:58.072-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-11T18:08:58.502-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-11T18:08:58.602-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:08:58.785-05:00  WARN 25434 --- [StudentClubManagement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-11T18:08:58.802-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-11T18:08:58.898-05:00 DEBUG 25434 --- [StudentClubManagement] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-02-11T18:08:59.012-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/StudentClubManagement?useSSL=false&serverTimezone=UTC'
+2025-02-11T18:08:59.033-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-11T18:08:59.053-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8261 (http) with context path '/'
+2025-02-11T18:08:59.058-05:00  INFO 25434 --- [StudentClubManagement] [restartedMain] o.s.StudentClubManagementApplication     : Started StudentClubManagementApplication in 2.099 seconds (process running for 2.407)
+2025-02-11T18:09:02.682-05:00  INFO 25434 --- [StudentClubManagement] [http-nio-8261-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-11T18:09:02.682-05:00  INFO 25434 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-11T18:09:02.684-05:00  INFO 25434 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-11T18:09:02.691-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2025-02-11T18:09:02.694-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2025-02-11T18:09:02.713-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.755-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
+2025-02-11T18:09:02.756-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
+2025-02-11T18:09:02.758-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-02-11T18:09:02.760-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-02-11T18:09:02.762-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.769-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.778-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.784-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.823-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api-docs/swagger-config
+2025-02-11T18:09:02.823-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api-docs/swagger-config
+2025-02-11T18:09:02.825-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
+2025-02-11T18:09:02.825-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
+2025-02-11T18:09:02.827-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.838-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:02.849-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api-docs
+2025-02-11T18:09:02.850-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api-docs
+2025-02-11T18:09:03.216-05:00  INFO 25434 --- [StudentClubManagement] [http-nio-8261-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 357 ms
+2025-02-11T18:09:03.221-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:09:14.386-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/clubs/getClubByName?clubName=Chess
+2025-02-11T18:09:14.391-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/clubs/getClubByName?clubName=Chess
+2025-02-11T18:09:14.468-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.club_id,
+        c1_0.available_slots,
+        c1_0.club_admin_user_id,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at 
+    from
+        club c1_0 
+    where
+        c1_0.club_name=?
+2025-02-11T18:09:14.486-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c1_0.club_id,
+        c1_0.available_slots,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        user u1_0 
+    left join
+        club c1_0 
+            on u1_0.user_id=c1_0.club_admin_user_id 
+    where
+        u1_0.user_id=?
+2025-02-11T18:09:14.498-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        uc1_0.user_id,
+        uc1_0.id,
+        uc1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        uc1_0.joined_date,
+        uc1_0.termination_date,
+        uc1_0.updated_at 
+    from
+        user_club uc1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=uc1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        uc1_0.user_id=?
+2025-02-11T18:09:14.502-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        cr1_0.user_id,
+        cr1_0.id,
+        cr1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        cr1_0.comment,
+        cr1_0.created_at,
+        cr1_0.status,
+        cr1_0.updated_at 
+    from
+        club_request cr1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=cr1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        cr1_0.user_id=?
+2025-02-11T18:09:14.504-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.id,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.title,
+        a1_0.type,
+        a1_0.updated_at 
+    from
+        announcement a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T18:09:14.505-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        q1_0.user_id,
+        q1_0.question_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count 
+    from
+        question q1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=q1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    where
+        q1_0.user_id=?
+2025-02-11T18:09:14.506-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_0.answer_id,
+        a1_0.answer,
+        a1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        a1_0.created_at,
+        a1_0.question_id,
+        q1_0.question_id,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_admin_user_id,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at,
+        a1_0.updated_at 
+    from
+        answer a1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=a1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        question q1_0 
+            on q1_0.question_id=a1_0.question_id 
+    left join
+        club c2_0 
+            on c2_0.club_id=q1_0.club_id 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    where
+        a1_0.user_id=?
+2025-02-11T18:09:14.509-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        car1_0.club_admin_id,
+        car1_0.request_id,
+        car1_0.club_id,
+        c1_0.club_id,
+        c1_0.available_slots,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        c1_0.club_name,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.no_of_members,
+        c1_0.total_slots,
+        c1_0.updated_at,
+        car1_0.club_admin_approval_status,
+        car1_0.created_at,
+        car1_0.reviewer_id,
+        r1_0.user_id,
+        r1_0.address,
+        r1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        r1_0.created_at,
+        r1_0.email,
+        r1_0.first_name,
+        r1_0.joined_clubs,
+        r1_0.last_name,
+        r1_0.password,
+        r1_0.phone,
+        r1_0.role,
+        r1_0.updated_at,
+        car1_0.super_admin_approval_status,
+        car1_0.updated_at 
+    from
+        club_admin_request car1_0 
+    left join
+        club c1_0 
+            on c1_0.club_id=car1_0.club_id 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=c1_0.club_admin_user_id 
+    left join
+        user r1_0 
+            on r1_0.user_id=car1_0.reviewer_id 
+    left join
+        club c2_0 
+            on r1_0.user_id=c2_0.club_admin_user_id 
+    where
+        car1_0.club_admin_id=?
+2025-02-11T18:09:14.510-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        uc1_0.club_id,
+        uc1_0.id,
+        uc1_0.joined_date,
+        uc1_0.termination_date,
+        uc1_0.updated_at,
+        uc1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        user_club uc1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=uc1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        uc1_0.club_id=?
+2025-02-11T18:09:14.511-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.club_id,
+        a1_0.id,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.user_id,
+        pb1_0.user_id,
+        pb1_0.address,
+        pb1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        pb1_0.created_at,
+        pb1_0.email,
+        pb1_0.first_name,
+        pb1_0.joined_clubs,
+        pb1_0.last_name,
+        pb1_0.password,
+        pb1_0.phone,
+        pb1_0.role,
+        pb1_0.updated_at,
+        a1_0.title,
+        a1_0.type,
+        a1_0.updated_at 
+    from
+        announcement a1_0 
+    left join
+        user pb1_0 
+            on pb1_0.user_id=a1_0.user_id 
+    left join
+        club c2_0 
+            on pb1_0.user_id=c2_0.club_admin_user_id 
+    where
+        a1_0.club_id=?
+2025-02-11T18:09:14.512-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        r1_0.club_id,
+        r1_0.id,
+        r1_0.comment,
+        r1_0.created_at,
+        r1_0.status,
+        r1_0.updated_at,
+        r1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        club_request r1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=r1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        r1_0.club_id=?
+2025-02-11T18:09:14.513-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        q1_0.club_id,
+        q1_0.question_id,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        question q1_0 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    left join
+        club c2_0 
+            on u1_0.user_id=c2_0.club_admin_user_id 
+    where
+        q1_0.club_id=?
+2025-02-11T18:09:14.513-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.club_id,
+        a1_0.answer_id,
+        a1_0.answer,
+        a1_0.created_at,
+        a1_0.question_id,
+        q1_0.question_id,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_admin_user_id,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        q1_0.created_at,
+        q1_0.question,
+        q1_0.title,
+        q1_0.updated_at,
+        q1_0.upvote_count,
+        q1_0.user_id,
+        u1_0.user_id,
+        u1_0.address,
+        u1_0.birthday,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.joined_clubs,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_at,
+        a1_0.updated_at,
+        a1_0.user_id,
+        u2_0.user_id,
+        u2_0.address,
+        u2_0.birthday,
+        c3_0.club_id,
+        c3_0.available_slots,
+        c3_0.club_name,
+        c3_0.created_at,
+        c3_0.description,
+        c3_0.no_of_members,
+        c3_0.total_slots,
+        c3_0.updated_at,
+        u2_0.created_at,
+        u2_0.email,
+        u2_0.first_name,
+        u2_0.joined_clubs,
+        u2_0.last_name,
+        u2_0.password,
+        u2_0.phone,
+        u2_0.role,
+        u2_0.updated_at 
+    from
+        answer a1_0 
+    left join
+        question q1_0 
+            on q1_0.question_id=a1_0.question_id 
+    left join
+        club c2_0 
+            on c2_0.club_id=q1_0.club_id 
+    left join
+        user u1_0 
+            on u1_0.user_id=q1_0.user_id 
+    left join
+        user u2_0 
+            on u2_0.user_id=a1_0.user_id 
+    left join
+        club c3_0 
+            on u2_0.user_id=c3_0.club_admin_user_id 
+    where
+        a1_0.club_id=?
+2025-02-11T18:09:14.515-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] org.hibernate.SQL                        : 
+    select
+        car1_0.club_id,
+        car1_0.request_id,
+        car1_0.club_admin_id,
+        ca1_0.user_id,
+        ca1_0.address,
+        ca1_0.birthday,
+        c2_0.club_id,
+        c2_0.available_slots,
+        c2_0.club_name,
+        c2_0.created_at,
+        c2_0.description,
+        c2_0.no_of_members,
+        c2_0.total_slots,
+        c2_0.updated_at,
+        ca1_0.created_at,
+        ca1_0.email,
+        ca1_0.first_name,
+        ca1_0.joined_clubs,
+        ca1_0.last_name,
+        ca1_0.password,
+        ca1_0.phone,
+        ca1_0.role,
+        ca1_0.updated_at,
+        car1_0.club_admin_approval_status,
+        car1_0.created_at,
+        car1_0.reviewer_id,
+        r1_0.user_id,
+        r1_0.address,
+        r1_0.birthday,
+        c3_0.club_id,
+        c3_0.available_slots,
+        c3_0.club_name,
+        c3_0.created_at,
+        c3_0.description,
+        c3_0.no_of_members,
+        c3_0.total_slots,
+        c3_0.updated_at,
+        r1_0.created_at,
+        r1_0.email,
+        r1_0.first_name,
+        r1_0.joined_clubs,
+        r1_0.last_name,
+        r1_0.password,
+        r1_0.phone,
+        r1_0.role,
+        r1_0.updated_at,
+        car1_0.super_admin_approval_status,
+        car1_0.updated_at 
+    from
+        club_admin_request car1_0 
+    left join
+        user ca1_0 
+            on ca1_0.user_id=car1_0.club_admin_id 
+    left join
+        club c2_0 
+            on ca1_0.user_id=c2_0.club_admin_user_id 
+    left join
+        user r1_0 
+            on r1_0.user_id=car1_0.reviewer_id 
+    left join
+        club c3_0 
+            on r1_0.user_id=c3_0.club_admin_user_id 
+    where
+        car1_0.club_id=?
+2025-02-11T18:09:14.516-05:00 DEBUG 25434 --- [StudentClubManagement] [http-nio-8261-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-11T18:10:03.945-05:00  INFO 25434 --- [StudentClubManagement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-11T18:10:03.951-05:00  INFO 25434 --- [StudentClubManagement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-11T18:10:03.955-05:00  INFO 25434 --- [StudentClubManagement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-11T18:10:03.958-05:00  INFO 25434 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-11T18:10:03.963-05:00  INFO 25434 --- [StudentClubManagement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
