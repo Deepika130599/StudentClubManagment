@@ -30,6 +30,17 @@ public class UserService {
         }
 
         User user = new User();
+        return getUser(userDTO, user);
+    }
+
+
+
+    public User updateUserFromDTO(Long id, UserDTO updatedUserDTO) throws UserNotFoundException {
+        User existingUser = getUserById(id);
+        return getUser(updatedUserDTO, existingUser);
+    }
+
+    private User getUser(UserDTO userDTO, User user) {
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
         user.setEmail(userDTO.getEmail());
@@ -40,21 +51,6 @@ public class UserService {
         user.setBirthday(userDTO.getBirthday());
 
         return userRepository.save(user);
-    }
-
-    public User updateUserFromDTO(Long id, UserDTO updatedUserDTO) throws UserNotFoundException {
-        User existingUser = getUserById(id);
-
-        existingUser.setFirstName(updatedUserDTO.getFirstName());
-        existingUser.setLastName(updatedUserDTO.getLastName());
-        existingUser.setEmail(updatedUserDTO.getEmail());
-        existingUser.setPassword(updatedUserDTO.getPassword());
-        existingUser.setPhone(updatedUserDTO.getPhone());
-        existingUser.setAddress(updatedUserDTO.getAddress());
-        existingUser.setRole(updatedUserDTO.getRole());
-        existingUser.setBirthday(updatedUserDTO.getBirthday());
-
-        return userRepository.save(existingUser);
     }
 
     public void deleteUser(Long id) throws UserNotFoundException {
