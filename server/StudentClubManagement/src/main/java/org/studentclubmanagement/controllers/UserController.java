@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.studentclubmanagement.dtos.ApiResponseDTO;
 import org.studentclubmanagement.dtos.UserDTO;
 import org.studentclubmanagement.models.User;
 import org.studentclubmanagement.services.UserService;
@@ -23,54 +24,77 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // Get all users
+    /**
+     *
+     * @return
+     */
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<ApiResponseDTO> getAllUsers() {
         List<User> users = userService.getAllUsers();
-        return ResponseEntity.ok(users);
+        return ResponseEntity.ok(new ApiResponseDTO("Successfully retrieved all users", users));
     }
 
-    // Get a user by ID
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponseDTO> getUserById(@PathVariable Long id) {
         try {
             User user = userService.getUserById(id);
-            return ResponseEntity.ok(user);
+            return ResponseEntity.ok(new ApiResponseDTO("User retrieved successfully", user));
         } catch (UserNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponseDTO("User not found", null));
         }
     }
 
-    // Create a new user
+    /**
+     *
+     * @param userDTO
+     * @return
+     */
     @PostMapping
-    public ResponseEntity<User> createUser(@Validated @RequestBody UserDTO userDTO) {
+    public ResponseEntity<ApiResponseDTO> createUser(@Validated @RequestBody UserDTO userDTO) {
         try {
             User savedUser = userService.createUserFromDTO(userDTO);
-            return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponseDTO("User Created Successfully", savedUser));
         } catch (UserAlreadyExistsException e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).build(); // Email already exists
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(new ApiResponseDTO("User Already Exists [CHECK EMAIL & USER ID]", null));
         }
     }
 
-    // Update an existing user
+    /**
+     *
+     * @param id
+     * @param updatedUserDTO
+     * @return
+     */
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @Validated @RequestBody UserDTO updatedUserDTO) {
+    public ResponseEntity<ApiResponseDTO> updateUser(@PathVariable Long id, @Validated @RequestBody UserDTO updatedUserDTO) {
         try {
             User savedUser = userService.updateUserFromDTO(id, updatedUserDTO);
-            return ResponseEntity.ok(savedUser);
+            return ResponseEntity.ok(new ApiResponseDTO<>("User updated successfully", savedUser));
         } catch (UserNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponseDTO<>("Error: User with id " + id + " not found", null));
         }
     }
 
-    // Delete a user by ID
+    /**
+     *
+     * @param id
+     * @return
+     */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<ApiResponseDTO> deleteUser(@PathVariable Long id) {
         try {
             userService.deleteUser(id);
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.ok(new ApiResponseDTO("User with ID "+id+" has been successfully deleted.", null));
         } catch (UserNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponseDTO<>("ERROR: User with ID "+id+" not found", null));
         }
     }
 }
