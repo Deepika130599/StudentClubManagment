@@ -1,8 +1,9 @@
 package org.studentclubmanagement.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
@@ -26,6 +27,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @JsonIgnore // Prevent password from being serialized
     @Column(nullable = false, length = 255)
     private String password;
 
@@ -46,6 +48,7 @@ public class User {
     @Max(value = 3, message = "A user can join a maximum of 3 clubs")
     private int joinedClubs = 0;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "clubAdmin", cascade = CascadeType.ALL, orphanRemoval = true)
     private Club club;
 
@@ -53,20 +56,26 @@ public class User {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private Set<UserClub> userClubs;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ClubRequest> clubRequests;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "postedBy", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Announcement> announcements;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Question> questions;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Answer> answers;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "clubAdmin", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ClubAdminRequest> clubAdminRequests;
 

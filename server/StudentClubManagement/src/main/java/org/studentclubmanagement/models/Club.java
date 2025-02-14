@@ -1,5 +1,6 @@
 package org.studentclubmanagement.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.time.LocalDateTime;
@@ -29,6 +30,7 @@ public class Club {
     @Min(value = 1, message = "Total slots must be at least 1")
     private int totalSlots;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "club_admin_user_id")
     private User clubAdmin;
@@ -36,31 +38,29 @@ public class Club {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "club", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<UserClub> userClubs;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "club", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Announcement> announcements;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "club", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ClubRequest> requests;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "club", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Question> questions;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "club", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Answer> answers;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "club", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ClubAdminRequest> clubAdminRequests;
-
-    public User getClubAdmin() {
-        return clubAdmin;
-    }
-
-    public void setClubAdmin(User clubAdmin) {
-        this.clubAdmin = clubAdmin;
-    }
 
     @PrePersist
     protected void onCreate() {
@@ -74,6 +74,15 @@ public class Club {
     }
 
     // Getters and Setters
+
+
+    public User getClubAdmin() {
+        return clubAdmin;
+    }
+
+    public void setClubAdmin(User clubAdmin) {
+        this.clubAdmin = clubAdmin;
+    }
 
     public Long getClubId() {
         return clubId;
