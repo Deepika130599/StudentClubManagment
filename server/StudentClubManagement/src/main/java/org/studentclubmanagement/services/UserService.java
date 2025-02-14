@@ -6,11 +6,13 @@ import org.springframework.stereotype.Service;
 import org.studentclubmanagement.dtos.SignInRequestDTO;
 import org.studentclubmanagement.dtos.UpdateUserDTO;
 import org.studentclubmanagement.dtos.UserDTO;
+import org.studentclubmanagement.dtos.UserResponseDTO;
 import org.studentclubmanagement.models.User;
 import org.studentclubmanagement.repositories.UserRepository;
 import org.studentclubmanagement.exceptions.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -21,13 +23,36 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserResponseDTO> getAllUsers() {
+        return userRepository.findAll()
+                .stream()
+                .map(this::getUserResponse)
+                .collect(Collectors.toList());
+    }
+
+    public UserResponseDTO getUserInUserResponseDTO(Long id) {
+        User user = getUserById(id);
+        return getUserResponse(user);
     }
 
     public User getUserById(Long id) throws UserNotFoundException {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User with ID " + id + " not found"));
+    }
+
+    private UserResponseDTO getUserResponse(User user) {
+        UserResponseDTO userResponseDTO = new UserResponseDTO();
+        userResponseDTO.setFirstName(user.getFirstName());
+        userResponseDTO.setLastName(user.getLastName());
+        userResponseDTO.setEmail(user.getEmail());
+        userResponseDTO.setPhone(user.getPhone());
+        userResponseDTO.setAddress(user.getAddress());
+        userResponseDTO.setBirthday(user.getBirthday());
+        userResponseDTO.setJoinedClubs(user.getJoinedClubs());
+        userResponseDTO.setCreatedAt(user.getCreatedAt());
+        userResponseDTO.setUpdatedAt(user.getUpdatedAt());
+        userResponseDTO.setUserClubs(user.getUserClubs());
+        return userResponseDTO;
     }
 
     public User createUserFromDTO(UserDTO userDTO) throws UserAlreadyExistsException {
@@ -37,19 +62,20 @@ public class UserService {
         return assignUser(userDTO);
     }
 
-    public User updateUserFromDTO(Long id, UpdateUserDTO updatedUserDTO) throws UserNotFoundException {
+    public UserResponseDTO updateUserFromDTO(Long id, UpdateUserDTO updatedUserDTO) throws UserNotFoundException {
         User existingUser = getUserById(id);
-        return updateUser(updatedUserDTO, existingUser);
+        User updatedUser = updateUser(updatedUserDTO, existingUser);
+        return getUserResponse(updatedUser);
     }
 
-    private User updateUser(UpdateUserDTO userDTO, User existingUser) throws UserAlreadyExistsException {
+    private User updateUser(UpdateUserDTO userDTO, User existingUser) {
         existingUser.setFirstName(userDTO.getFirstName());
         existingUser.setLastName(userDTO.getLastName());
         existingUser.setPhone(userDTO.getPhone());
         existingUser.setAddress(userDTO.getAddress());
-
         return userRepository.save(existingUser);
     }
+
     private User assignUser(UserDTO userDTO) {
         User user = new User();
         user.setFirstName(userDTO.getFirstName());
@@ -60,7 +86,6 @@ public class UserService {
         user.setAddress(userDTO.getAddress());
         user.setRole(userDTO.getRole());
         user.setBirthday(userDTO.getBirthday());
-
         return userRepository.save(user);
     }
 
@@ -83,13 +108,13 @@ public class UserService {
         return passwordEncoder.matches(rawPassword, encodedPassword);
     }
 
-
-    public User updateUserFromUserDTO(Long id, UserDTO userDTO) {
+    public UserResponseDTO updateUserFromUserDTO(Long id, UserDTO userDTO) {
         User existingUser = getUserById(id);
-        return updateUserByAdmin(userDTO, existingUser);
+        User updatedUser = updateUserByAdmin(userDTO, existingUser);
+        return getUserResponse(updatedUser);
     }
 
-    private User updateUserByAdmin(UserDTO userDTO, User existingUser) throws UserNotFoundException {
+    private User updateUserByAdmin(UserDTO userDTO, User existingUser) {
         existingUser.setFirstName(userDTO.getFirstName());
         existingUser.setLastName(userDTO.getLastName());
         existingUser.setEmail(userDTO.getEmail());
@@ -98,15 +123,20 @@ public class UserService {
         existingUser.setAddress(userDTO.getAddress());
         existingUser.setRole(userDTO.getRole());
         existingUser.setBirthday(userDTO.getBirthday());
-
         return userRepository.save(existingUser);
     }
 
-    public List<User> getAllUsersStartingWithEmail(String email) {
-        return userRepository.findByEmailStartingWith(email);
+    public List<UserResponseDTO> getAllUsersStartingWithEmail(String email) {
+        return userRepository.findByEmailStartingWith(email)
+                .stream()
+                .map(this::getUserResponse)
+                .collect(Collectors.toList());
     }
 
-    public List<User> getAllUsersStartingWithName(String name) {
-        return userRepository.findByFirstNameAndLastNameStartingWith(name, name);
+    public List<UserResponseDTO> getAllUsersStartingWithName(String name) {
+        return userRepository.findByFirstNameAndLastNameStartingWith(name, name)
+                .stream()
+                .map(this::getUserResponse)
+                .collect(Collectors.toList());
     }
 }

@@ -7,10 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.studentclubmanagement.dtos.ApiResponseDTO;
-import org.studentclubmanagement.dtos.SignInRequestDTO;
-import org.studentclubmanagement.dtos.UpdateUserDTO;
-import org.studentclubmanagement.dtos.UserDTO;
+import org.studentclubmanagement.dtos.*;
 import org.studentclubmanagement.models.User;
 import org.studentclubmanagement.services.UserService;
 import org.studentclubmanagement.exceptions.*;
@@ -32,7 +29,7 @@ public class UserController {
      */
     @GetMapping
     public ResponseEntity<ApiResponseDTO> getAllUsers() {
-        List<User> users = userService.getAllUsers();
+        List<UserResponseDTO> users = userService.getAllUsers();
         return ResponseEntity.ok(new ApiResponseDTO("Successfully retrieved all users", users));
     }
 
@@ -44,7 +41,7 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponseDTO> getUserById(@PathVariable Long id) {
         try {
-            User user = userService.getUserById(id);
+            UserResponseDTO user = userService.getUserInUserResponseDTO(id);
             return ResponseEntity.ok(new ApiResponseDTO("User retrieved successfully", user));
         } catch (UserNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponseDTO("User not found", null));
@@ -53,13 +50,13 @@ public class UserController {
 
     @GetMapping("/email")
     public ResponseEntity<ApiResponseDTO> getUserByEmail(@RequestParam String email) {
-        List<User> users = userService.getAllUsersStartingWithEmail(email);
+        List<UserResponseDTO> users = userService.getAllUsersStartingWithEmail(email);
         return ResponseEntity.ok(new ApiResponseDTO("Successfully retrieved all users", users));
     }
 
     @GetMapping("/name")
     public ResponseEntity<ApiResponseDTO> getUserByName(@RequestParam String name) {
-        List<User> users = userService.getAllUsersStartingWithName(name);
+        List<UserResponseDTO> users = userService.getAllUsersStartingWithName(name);
         return ResponseEntity.ok(new ApiResponseDTO("Successfully retrieved all users", users));
     }
     /**
@@ -87,7 +84,7 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponseDTO> updateUser(@PathVariable Long id, @Validated @RequestBody UpdateUserDTO updatedUserDTO) {
         try {
-            User savedUser = userService.updateUserFromDTO(id, updatedUserDTO);
+            UserResponseDTO savedUser = userService.updateUserFromDTO(id, updatedUserDTO);
             return ResponseEntity.ok(new ApiResponseDTO<>("User updated successfully", savedUser));
         } catch (UserNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -104,7 +101,7 @@ public class UserController {
     @PutMapping("/updateByAdmin/{id}")
     public ResponseEntity<ApiResponseDTO> updateUserByAdmin(@PathVariable Long id, @Validated @RequestBody UserDTO userDTO) {
         try {
-            User savedUser = userService.updateUserFromUserDTO(id, userDTO);
+            UserResponseDTO savedUser = userService.updateUserFromUserDTO(id, userDTO);
             return ResponseEntity.ok(new ApiResponseDTO<>("User updated successfully", savedUser));
         } catch (UserNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
