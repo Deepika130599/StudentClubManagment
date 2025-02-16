@@ -132,7 +132,7 @@ public class UserController {
      * @return
      * @throws UserNotFoundException
      */
-    @PostMapping("/login")
+    @PostMapping("/auth/login")
     public ResponseEntity<ApiResponseDTO> login(@Validated @RequestBody SignInRequestDTO signInRequestDTO) throws UserNotFoundException {
         try{
             String message = userService.authenticateUser(signInRequestDTO);
