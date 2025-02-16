@@ -4,7 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.studentclubmanagement.models.*;
 
+import java.util.List;
+
 @Repository
 public interface ClubRequestRepository extends JpaRepository<ClubRequest, Long> {
-    // Custom query methods if needed
+    List<ClubRequest> findByClub_ClubIdAndStatus(Long clubId, RequestStatus status);
+    boolean existsByUserAndClub(User user, Club club);
 }

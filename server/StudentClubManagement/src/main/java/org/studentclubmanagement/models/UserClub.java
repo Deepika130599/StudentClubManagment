@@ -1,7 +1,6 @@
 package org.studentclubmanagement.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -19,6 +18,9 @@ public class UserClub {
     @ManyToOne
     @JoinColumn(name = "club_id", nullable = false)
     private Club club;
+
+    @Column(nullable = false)
+    private String comment;
 
     private LocalDateTime joinedDate;
     private LocalDateTime terminationDate;
@@ -83,5 +85,13 @@ public class UserClub {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }
