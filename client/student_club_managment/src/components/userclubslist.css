@@ -1,0 +1,92 @@
+/* Clubs Title */
+.clubs-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Card Container */
+.club-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Club Card */
+.club-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  /* max-width: 350px; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.club-card:hover {
+  transform: scale(1.03);
+}
+
+/* Club Header (Title + Status) */
+.club-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.club-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Club Description */
+.club-description {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/* Slots Info */
+.club-slots {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Joined Date */
+.club-joined {
+  font-size: 14px;
+  color: gray;
+  font-weight: bold;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .club-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .club-card {
+    width: 90%;
+  }
+}
