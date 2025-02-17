@@ -2,7 +2,7 @@
 .background {
     width: 100vw;
     height: 100vh;
-    background-image: url("./images/signin_bg.jpg"); /* Replace with your image URL */
+    background-image: url("../images/signin_bg.jpg"); /* Replace with your image URL */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -183,12 +183,12 @@
   @media (max-width: 768px) {
     .background-image {
       background-size: cover; 
-      background-image: url('./images/signin_bg_phones.jpg');
+      background-image: url('../images/signin_bg_phones.jpg');
       background-repeat: no-repeat;
     }
   }
   
-  .reroute_text {
+  .reroute-text {
     color: var(--brown);
     cursor: pointer;
   }
