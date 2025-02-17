@@ -1,5 +1,6 @@
 package org.studentclubmanagement.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.time.LocalDateTime;
@@ -12,10 +13,12 @@ public class Announcement {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User postedBy;
 
     @ManyToOne
     @JoinColumn(name = "club_id", nullable = false)
+    @JsonIgnore
     private Club club;
 
     @NotBlank(message = "Title cannot be blank")
