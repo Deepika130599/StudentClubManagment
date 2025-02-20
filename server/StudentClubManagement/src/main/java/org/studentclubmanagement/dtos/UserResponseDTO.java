@@ -9,6 +9,8 @@ import java.util.Set;
 
 public class UserResponseDTO {
 
+    private Long userId;
+
     private String firstName;
 
     private String lastName;
@@ -28,6 +30,14 @@ public class UserResponseDTO {
     private LocalDateTime updatedAt;
 
     private Set<UserClub> userClubs;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public String getFirstName() {
         return firstName;

@@ -42,6 +42,7 @@ public class UserService {
 
     private UserResponseDTO getUserResponse(User user) {
         UserResponseDTO userResponseDTO = new UserResponseDTO();
+        userResponseDTO.setUserId(user.getUserId());
         userResponseDTO.setFirstName(user.getFirstName());
         userResponseDTO.setLastName(user.getLastName());
         userResponseDTO.setEmail(user.getEmail());
@@ -59,7 +60,7 @@ public class UserService {
         if (userRepository.findByEmail(userDTO.getEmail()) != null) {
             throw new UserAlreadyExistsException("User with email " + userDTO.getEmail() + " already exists");
         }
-        return assignUser(userDTO);
+        return saveUser(userDTO);
     }
 
     public UserResponseDTO updateUserFromDTO(Long id, UpdateUserDTO updatedUserDTO) throws UserNotFoundException {
@@ -76,8 +77,15 @@ public class UserService {
         return userRepository.save(existingUser);
     }
 
-    private User assignUser(UserDTO userDTO) {
+    private User saveUser(UserDTO userDTO) {
         User user = new User();
+        User savedUser = getUser(userDTO, user);
+        user.setUserId(savedUser.getUserId());
+        return user;
+
+    }
+
+    private User getUser(UserDTO userDTO, User user) {
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
         user.setEmail(userDTO.getEmail());
@@ -115,15 +123,7 @@ public class UserService {
     }
 
     private User updateUserByAdmin(UserDTO userDTO, User existingUser) {
-        existingUser.setFirstName(userDTO.getFirstName());
-        existingUser.setLastName(userDTO.getLastName());
-        existingUser.setEmail(userDTO.getEmail());
-        existingUser.setPhone(userDTO.getPhone());
-        existingUser.setPassword(passwordEncoder.encode(userDTO.getPassword())); // Hash the password before saving it to the database
-        existingUser.setAddress(userDTO.getAddress());
-        existingUser.setRole(userDTO.getRole());
-        existingUser.setBirthday(userDTO.getBirthday());
-        return userRepository.save(existingUser);
+        return getUser(userDTO, existingUser);
     }
 
     public List<UserResponseDTO> getAllUsersStartingWithEmail(String email) {
