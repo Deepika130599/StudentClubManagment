@@ -1,0 +1,149 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-color: var(--primary);
+  transition: width 0.3s ease-in-out;
+  width: 80px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar.expanded {
+  width: 250px;
+  align-items: flex-start;
+  padding-left: 15px;
+}
+
+.burgerIcon {
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: var(--text);
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.burgerIconExpanded {
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text);
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.burgerIcon span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sidebarMenu li {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  color: var(--text);
+  border-radius: 8px;
+}
+
+.sidebarMenu li.active {
+  border-bottom: 3px solid var(--warmgold);
+}
+
+.sidebarMenu li:hover {
+  color: var(--black);
+}
+
+.sidebarMenu .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap;
+  width: 100%;
+  gap: 15px;
+}
+
+.sidebar.expanded .sidebarMenu .link {
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.sidebarMenu .icon {
+  font-size: 22px;
+  color: var(--text);
+  transition: transform 0.2s ease-in-out;
+}
+
+.sidebarMenu li:active .icon {
+  color: var(--black);
+}
+
+
+.logoutSection {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoutButton {
+  background-color: var(--lightBrown);
+  color: var(--text);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logoutButton:hover {
+  background-color: var(--brown);
+  color: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 50px;
+  }
+}
