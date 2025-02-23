@@ -29,7 +29,7 @@ public class AnnouncementController {
      * Create an Announcement
      */
     @PostMapping
-    public ResponseEntity<ApiResponseDTO> createAnnouncement(@RequestBody AnnouncementDTO announcementDTO) throws ClubNotFoundException, UnauthorizedActionException {
+    public ResponseEntity<ApiResponseDTO<Announcement>> createAnnouncement(@RequestBody AnnouncementDTO announcementDTO) throws ClubNotFoundException, UnauthorizedActionException {
         Announcement announcement = announcementService.createAnnouncement(announcementDTO);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ApiResponseDTO<>("Announcement posted successfully", announcement));

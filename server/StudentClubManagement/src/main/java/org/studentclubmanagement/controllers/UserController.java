@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/user")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@Tag(name = "User APIs", description = "Operations related to users")
+@Tag(name = "User APIs", description = "Operations related to users.")
 public class UserController {
 
     @Autowired

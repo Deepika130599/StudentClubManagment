@@ -1,5 +1,6 @@
 package org.studentclubmanagement.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -17,10 +18,12 @@ public class Answer {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "club_id", nullable = false)
+    @JsonIgnore
     private Club club;
 
     @NotBlank(message = "Answer content cannot be blank")

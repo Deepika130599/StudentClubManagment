@@ -1,5 +1,6 @@
 package org.studentclubmanagement.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -13,10 +14,12 @@ public class Question {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "club_id")
+    @JsonIgnore
     private Club club;
 
     private int upvoteCount = 0;

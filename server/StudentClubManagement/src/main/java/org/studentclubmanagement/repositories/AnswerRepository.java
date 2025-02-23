@@ -4,7 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.studentclubmanagement.models.*;
 
+import java.util.List;
+
 @Repository
 public interface AnswerRepository extends JpaRepository<Answer, Long> {
-    // Custom query methods if needed
+    List<Answer> findByQuestion_QuestionId(Long questionId);
 }
