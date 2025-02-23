@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/clubs")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@Tag(name = "Club APIs", description = "Operations related to clubs")
+@Tag(name = "Club APIs", description = "Operations related to clubs.")
 public class ClubController {
 
     @Autowired
