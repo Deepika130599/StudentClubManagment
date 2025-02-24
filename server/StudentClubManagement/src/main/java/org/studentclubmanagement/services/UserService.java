@@ -45,6 +45,7 @@ public class UserService {
         userResponseDTO.setUserId(user.getUserId());
         userResponseDTO.setFirstName(user.getFirstName());
         userResponseDTO.setLastName(user.getLastName());
+        userResponseDTO.setRole(user.getRole());
         userResponseDTO.setEmail(user.getEmail());
         userResponseDTO.setPhone(user.getPhone());
         userResponseDTO.setAddress(user.getAddress());

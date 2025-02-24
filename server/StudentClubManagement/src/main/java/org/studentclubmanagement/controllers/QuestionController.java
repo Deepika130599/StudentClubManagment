@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.studentclubmanagement.dtos.ApiResponseDTO;
 import org.studentclubmanagement.dtos.QuestionRequestDTO;
+import org.studentclubmanagement.dtos.QuestionResponseDTO;
 import org.studentclubmanagement.exceptions.ClubNotFoundException;
 import org.studentclubmanagement.exceptions.UndefinedUserClubException;
 import org.studentclubmanagement.models.Question;
@@ -30,9 +31,11 @@ public class QuestionController {
                 .body(new ApiResponseDTO<>("Question created successfully", question));
     }
 
-    @GetMapping("/clubId")
-    public ResponseEntity<ApiResponseDTO<List<Question>>> getClubQuestions(@RequestParam("clubId") int clubId) throws ClubNotFoundException {
-        List<Question> questionsList = questionService.getQuestionsByClub(clubId);
-        return ResponseEntity.ok(new ApiResponseDTO<>("Questions For Club with clubId: "+clubId, questionsList));
+    @GetMapping("/{clubId}")
+    public ResponseEntity<ApiResponseDTO<List<QuestionResponseDTO>>> getQuestionsByClub(@PathVariable int clubId) {
+        List<QuestionResponseDTO> questions = questionService.getQuestionsByClub(clubId);
+        return ResponseEntity.ok(new ApiResponseDTO<>("Questions fetched successfully", questions));
     }
+
+
 }
