@@ -1,0 +1,94 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--background);
+  width: 100%;
+  height: -webkit-fill-available;
+  overflow-y: auto;
+}
+
+.searchBar {
+  width: 50%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.clubsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.clubCard {
+  width: 280px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: var(--white);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+}
+
+.clubCard:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.clubName {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.clubDescription {
+  font-size: 14px;
+  color: var(--brown);
+  margin-bottom: 12px;
+}
+
+.joinInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.joinButton {
+  background-color: var(--primary);
+  color: var(--text);
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.joinButton:hover {
+  background-color: var(--secondary);
+}
+
+.joinButton:disabled {
+  background-color: var(--lightBrown);
+  cursor: not-allowed;
+}

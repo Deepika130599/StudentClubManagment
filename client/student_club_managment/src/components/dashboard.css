@@ -5,27 +5,59 @@
   min-height: -webkit-fill-available;
   padding: 20px;
   gap: 20px;
+  width: 100%;
+  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
 }
 
 /* Left Side (Clubs List) */
 .dashboard-left {
-  width: 65%;
-  max-width: 900px;
+  flex: 2;
+  max-width: 65%;
+  min-width: 400px;
 }
 
 /* Right Side (Calendar & Events) */
 .dashboard-right {
-  width: 35%;
+  flex: 1;
+  max-width: 30%;
   min-width: 320px;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media (max-width: 1024px) {
   .dashboard-container {
     flex-direction: column; /* Stack elements vertically */
+    align-items: center;
   }
 
-  .dashboard-left, .dashboard-right {
+  .dashboard-left,
+  .dashboard-right {
     width: 100%; /* Full width */
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .dashboard-left,
+  .dashboard-right {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .dashboard-left,
+  .dashboard-right {
+    width: 100%;
+    max-width: 100%;
   }
 }

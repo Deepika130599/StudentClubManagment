@@ -29,10 +29,13 @@ const fetchAPI = async(URL, method = 'GET', data = null) => {
 // User API
 
 export const createUser = (data) => fetchAPI('/users', 'POST', data);
-export const fetchUser = (data) => fetchAPI('/user/login', 'POST', data );
+export const userAuth = (data) => fetchAPI('/user/auth/login', 'POST', data ); 
 export const getUserClubs = (id) => fetchAPI(`/user/${id}`, 'GET');
-
+export const fetchUserData = (email) => fetchAPI(`/user/email?email=${email}`, 'GET');
 
 // Clubs API
 export const fetchAllClubs = () => fetchAPI(`/clubs`, 'GET');
+export const joinClub = (data) => fetchAPI('/club-requests', 'POST', data ); 
 
+// Announcments
+export const fetchAnnouncements = (clubId) => fetchAPI(`/announcements/${clubId}`, 'GET')

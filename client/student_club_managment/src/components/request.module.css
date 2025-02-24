@@ -1,0 +1,81 @@
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--background);
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .pageTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+  
+  .requestsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 60%;
+  }
+  
+  .requestCard {
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--white);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .requestCard:hover {
+    transform: scale(1.03);
+  }
+  
+  .rejected {
+    background-color: var(--lightBrown);
+  }
+  
+  .clubName {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
+  }
+  
+  .status {
+    font-size: 14px;
+    color: var(--primary);
+  }
+  
+  .requestedTime {
+    font-size: 12px;
+    color: var(--brown);
+  }
+  
+  .rejectionDetails {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--warmgold);
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .deniedText {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--black);
+  }
+  
+  .comment {
+    font-size: 12px;
+    color: var(--black);
+  }
+  
+  .deniedTime {
+    font-size: 12px;
+    color: var(--brown);
+  }

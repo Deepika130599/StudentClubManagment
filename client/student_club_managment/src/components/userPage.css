@@ -1,3 +1,4 @@
 .main-container {
     display: flex;
+    overflow-x: hidden;
 }

@@ -1,0 +1,161 @@
+.announcementsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: calc(100% - 120px); /* Adjust width to account for the sidebar */
+  margin-left:80px; /* Shift content right to avoid going under sidebar */
+}
+
+/* Back Button and Title in the Same Line */
+.headerContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.backIcon {
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.backIcon:hover {
+  color: var(--lightBrown);
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--black);
+}
+
+/* Tabs */
+.tabsContainer {
+  display: flex;
+  gap: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.tabButton {
+  font-size: 16px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.tabButton:hover {
+  color: var(--black);
+}
+
+.activeTab {
+  color: var(--black);
+  border-bottom: 3px solid var(--black);
+}
+
+/* Announcements List */
+.announcementsList {
+  width: 100%;
+  /* max-width: 1100px; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.announcementItem {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.announcementItem:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.announcementIcon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.announcementContent {
+  flex-grow: 1;
+}
+
+.announcementTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.announcementDescription {
+  font-size: 14px;
+  color: gray;
+  margin-top: 3px;
+}
+
+.announcementDate {
+  font-size: 14px;
+  color: var(--brown);
+  white-space: nowrap;
+}
+
+
+.announcementCard {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+}
+
+.announcementCard:hover {
+  transform: scale(1.02);
+}
+
+.postedDate {
+  font-size: 14px;
+  color: var(--brown);
+  margin-top: 5px;
+}
+
+/* No Announcements */
+.noAnnouncements {
+  font-size: 16px;
+  color: var(--brown);
+  text-align: center;
+}
+
+/* Q&A Section */
+.qaSection {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: gray;
+  padding: 20px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+  .announcementsContainer {
+    width: calc(100% - 80px); /* Adjust sidebar width */
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .announcementsContainer {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+}

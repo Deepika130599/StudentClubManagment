@@ -1,27 +1,27 @@
-/* Calendar Container */
-.calendar-container {
+.calendarContainer {
   background: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 /* Calendar Title */
-.calendar-title {
+.calendarTitle {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 15px;
 }
 
 /* Calendar Styling */
-.calendar-widget {
+.calendarWidget {
   width: 100%;
   border: none;
 }
 
 /* ------------------- */
 /* Upcoming Events Section */
-.upcoming-events {
+.upcomingEvents {
   background: #f9f9f9;
   padding: 15px;
   border-radius: 10px;
@@ -29,52 +29,52 @@
 }
 
 /* Header */
-.events-header {
+.eventsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.events-title {
+.eventsTitle {
   font-size: 18px;
   font-weight: bold;
 }
 
-.events-more {
+.eventsMore {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
 }
 
 /* Subtitle */
-.events-subtitle {
+.eventsSubtitle {
   font-size: 14px;
   color: gray;
   margin-top: 5px;
 }
 
 /* Events List */
-.events-list {
+.eventsList {
   margin-top: 10px;
   list-style: none;
   padding: 0;
 }
 
-.event-item {
+.eventItem {
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
 }
 
-.event-item:last-child {
+.eventItem:last-child {
   border-bottom: none;
 }
 
-.event-date {
+.eventDate {
   font-size: 16px;
   font-weight: bold;
 }
 
-.event-description {
+.eventDescription {
   font-size: 14px;
   color: gray;
   margin-top: 2px;

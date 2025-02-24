@@ -1,51 +1,52 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaHome, FaUsers, FaClipboardList, FaSignOutAlt } from "react-icons/fa";
-import "./sidebar.css";
+import styles from "./sidebar.module.css";
+import { useDispatch } from "react-redux";
+import { logout } from "../state/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
-const Sidebar = ({ setUserLoggedIn }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+const Sidebar = () => {
+  const dispatch = useDispatch();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const onLogout = () => {
-    setUserLoggedIn(false);
+    dispatch(logout());
   };
 
   return (
-    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-      {/* Toggle Button */}
-      {/* <button className="sidebar-toggle" onClick={() => setIsCollapsed(!isCollapsed)}>
+    <div className={`${styles.sidebar} ${isExpanded ? styles.expanded : ""}`}>
+      <div className={isExpanded ? styles.burgerIcon : styles.burgerIconExpanded} onClick={() => setIsExpanded(!isExpanded)}>
         <FaBars />
-      </button> */}
+        {isExpanded && <span>Student Club</span>}
+      </div>
 
-      {/* Sidebar Content */}
-      <h2 className={`sidebar-title ${isCollapsed ? "hide" : ""}`}>Student Club</h2>
-      
-      <ul className="sidebar-menu">
+      <ul className={styles.sidebarMenu}>
         <li>
-          <Link to="/" className="link">
-            {/* <FaHome className="icon" />  */}
-            {!isCollapsed && "Dashboard"}
+          <Link to="/" className={styles.link}>
+            <FaHome className={styles.icon} />
+            {isExpanded && <span>Dashboard</span>}
           </Link>
         </li>
         <li>
-          <Link to="/clubslist" className="link">
-            {/* <FaUsers className="icon" />  */}
-            {!isCollapsed && "Clubs List"}
+          <Link to="/clubslist" className={styles.link}>
+            <FaUsers className={styles.icon} />
+            {isExpanded && <span>Clubs List</span>}
           </Link>
         </li>
         <li>
-          <Link to="/requests" className="link">
-            {/* <FaClipboardList className="icon" />  */}
-            {!isCollapsed && "Requests"}
+          <Link to="/requests" className={styles.link}>
+            <FaClipboardList className={styles.icon} />
+            {isExpanded && <span>Requests</span>}
           </Link>
         </li>
       </ul>
 
-      {/* Logout Button */}
-      <div className="logout-section">
-        <button className="logout-button" onClick={onLogout}>
-          {/* <FaSignOutAlt className="icon" />  */}
-          {!isCollapsed && "Logout"}
+      <div className={styles.logoutSection}>
+        <button className={styles.logoutButton} onClick={onLogout}>
+          <FaSignOutAlt className={styles.icon} />
+          {isExpanded && <span>Logout</span>}
         </button>
       </div>
     </div>
