@@ -2,13 +2,17 @@ package org.studentclubmanagement.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.studentclubmanagement.dtos.AnswerResponseDTO;
 import org.studentclubmanagement.dtos.QuestionRequestDTO;
+import org.studentclubmanagement.dtos.QuestionResponseDTO;
 import org.studentclubmanagement.exceptions.ClubNotFoundException;
 import org.studentclubmanagement.exceptions.UndefinedUserClubException;
 import org.studentclubmanagement.exceptions.UserNotFoundException;
+import org.studentclubmanagement.models.Answer;
 import org.studentclubmanagement.models.Club;
 import org.studentclubmanagement.models.Question;
 import org.studentclubmanagement.models.User;
+import org.studentclubmanagement.repositories.AnswerRepository;
 import org.studentclubmanagement.repositories.ClubRepository;
 import org.studentclubmanagement.repositories.QuestionRepository;
 import org.studentclubmanagement.repositories.UserRepository;
@@ -26,6 +30,8 @@ public class QuestionService {
     private UserRepository userRepository;
     @Autowired
     private ClubRepository clubRepository;
+    @Autowired
+    private AnswerRepository answerRepository;
 
 
     public Question createQuestion(QuestionRequestDTO questionRequestDTO) throws ClubNotFoundException, UndefinedUserClubException {
@@ -51,10 +57,63 @@ public class QuestionService {
         return questionRepository.save(question);
     }
 
-    /**
-     * Get all questions for a club
-     */
-    public List<Question> getQuestionsByClub(int clubId) {
-        return questionRepository.findByClub_ClubId(clubId);
+    public List<QuestionResponseDTO> getQuestionsByClub(int clubId) {
+        // Fetch all questions by Club ID
+        List<Question> questions = questionRepository.findByClub_ClubId(clubId);
+
+        // Extract question IDs
+        List<Long> questionIds = questions.stream()
+                .map(Question::getQuestionId)
+                .toList();
+
+        // Fetch all answers for the extracted question IDs
+        List<Answer> answers = answerRepository.findByQuestion_QuestionIdIn(questionIds);
+
+        // Map answers to AnswerResponseDTO
+        List<AnswerResponseDTO> answerDTOs = answers.stream().map(answer -> {
+            AnswerResponseDTO answerDTO = new AnswerResponseDTO();
+            answerDTO.setAnswerId(answer.getAnswerId());
+            answerDTO.setQuestionId(answer.getQuestion().getQuestionId());
+            answerDTO.setUserId(answer.getUser().getUserId());
+            answerDTO.setFirstName(answer.getUser().getFirstName());
+            answerDTO.setLastName(answer.getUser().getLastName());
+            answerDTO.setRole(answer.getUser().getRole());
+            answerDTO.setClubId(answer.getClub().getClubId());
+            answerDTO.setAnswer(answer.getAnswer());
+            answerDTO.setCreatedAt(answer.getCreatedAt());
+            answerDTO.setUpdatedAt(answer.getUpdatedAt());
+            return answerDTO;
+        }).toList();
+
+        // Map answers to their respective questions
+        List<QuestionResponseDTO> responseDTOs = questions.stream().map(question -> {
+            List<AnswerResponseDTO> questionAnswers = answerDTOs.stream()
+                    .filter(answerDTO -> answerDTO.getQuestionId().equals(question.getQuestionId()))
+                    .toList();
+
+            QuestionResponseDTO dto = new QuestionResponseDTO();
+            dto.setQuestionId(question.getQuestionId());
+            dto.setClubId(question.getClub().getClubId());
+            setUser(dto, question.getUser());
+            dto.setUpvoteCount(question.getUpvoteCount());
+            dto.setTitle(question.getTitle());
+            dto.setQuestion(question.getQuestion());
+            dto.setCreatedAt(question.getCreatedAt());
+            dto.setUpdatedAt(question.getUpdatedAt());
+            dto.setAnswers(questionAnswers);
+
+            return dto;
+        }).toList();
+
+        return responseDTOs;
+    }
+
+
+    private void setUser(QuestionResponseDTO dto, User user) {
+        dto.setUserId(user.getUserId());
+        dto.setFirstName(user.getFirstName());
+        dto.setLastName(user.getLastName());
+        dto.setEmail(user.getEmail());
+        dto.setRole(user.getRole());
     }
 }

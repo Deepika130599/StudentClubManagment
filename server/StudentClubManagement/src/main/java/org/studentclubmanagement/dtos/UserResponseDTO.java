@@ -17,6 +17,8 @@ public class UserResponseDTO {
 
     private String email;
 
+    private Role role;
+
     private String phone;
 
     private String address;
@@ -116,5 +118,13 @@ public class UserResponseDTO {
 
     public void setUserClubs(Set<UserClub> userClubs) {
         this.userClubs = userClubs;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
