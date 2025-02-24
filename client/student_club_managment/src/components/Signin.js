@@ -10,7 +10,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [signInErrors, setSignInErrors] = useState({});
-  const [signInData, setSignInData] = useState({ email: "", password: "" });
+  const [signInData, setSignInData] = useState({ email: "manohar9@gmail.com", password: "manohar123" });
   const [showPassword, setShowPassword] = useState(false);
   const { isLoading, error } = useSelector((state) => state.auth);
 
