@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.studentclubmanagement.dtos.ApiResponseDTO;
 import org.studentclubmanagement.dtos.ClubDTO;
 import org.studentclubmanagement.exceptions.ClubNotFoundException;
@@ -16,7 +17,7 @@ import org.studentclubmanagement.services.ClubService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/clubs")
+@RequestMapping("/api/club")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @Tag(name = "Club APIs", description = "Operations related to clubs.")
 public class ClubController {
@@ -27,90 +28,127 @@ public class ClubController {
     /**
      * Retrieves a list of all clubs.
      *
-     * @return List of Clubs wrapped in ApiResponseDTO.
+     * @return List of ClubDTOs wrapped in ApiResponseDTO.
      */
     @GetMapping
-    public ResponseEntity<ApiResponseDTO<List<Club>>> getAllClubs() {
-        List<Club> clubs = clubService.getAllClubs();
-        return ResponseEntity.ok(new ApiResponseDTO<>("Clubs retrieved successfully", clubs));
+    public ResponseEntity<ApiResponseDTO<List<ClubDTO>>> getAllClubs() {
+        List<ClubDTO> clubDTOs = clubService.getAllClubs();
+        return ResponseEntity.ok(new ApiResponseDTO<>("Clubs retrieved successfully", clubDTOs));
     }
 
     /**
      *
      * @param id
-     * @return Club by clubId
+     * @return ClubDTO by clubId
      */
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponseDTO> getClubById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponseDTO<ClubDTO>> getClubById(@PathVariable Long id) {
         try {
-            Club club = clubService.getClubById(id);
-            return ResponseEntity.ok(new ApiResponseDTO("Club retrieved successfully", club));
+            ClubDTO clubDTO = clubService.getClubByIdWithImage(id);
+            return ResponseEntity.ok(new ApiResponseDTO<>("Club retrieved successfully", clubDTO));
         } catch (ClubNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(new ApiResponseDTO("Club not found", null));
+                    .body(new ApiResponseDTO<>("Club not found", null));
         }
     }
 
     /**
      *
      * @param clubName
-     * @return
+     * @return ClubDTO by clubName
      */
     @GetMapping("/getClubByName")
-    public ResponseEntity<ApiResponseDTO> getClubByName(@RequestParam String clubName) {
+    public ResponseEntity<ApiResponseDTO<ClubDTO>> getClubByName(@RequestParam String clubName) {
         try {
-            Club club = clubService.findClubByName(clubName);
-            return ResponseEntity.ok(new ApiResponseDTO("Club retrieved successfully", club));
+            ClubDTO clubDTO = clubService.findClubByNameWithImage(clubName);
+            return ResponseEntity.ok(new ApiResponseDTO<>("Club retrieved successfully", clubDTO));
         } catch (ClubNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(new ApiResponseDTO<>("Club not found with the name: "+clubName,null));
+                    .body(new ApiResponseDTO<>("Club not found with the name: " + clubName, null));
         }
     }
 
     /**
-     *
      * Creates a new club in the club entity.
-     * @param clubDTO
-     * @return Club
+     *
+     * @param clubName
+     * @param description
+     * @param noOfMembers
+     * @param availableSlots
+     * @param totalSlots
+     * @param adminId
+     * @param image
+     * @return ClubDTO of the newly created club.
      */
-    @PostMapping
-    public ResponseEntity<ApiResponseDTO<Club>> createClub(@Valid @RequestBody ClubDTO clubDTO) {
-        Club savedClub = clubService.createClub(clubDTO);
+    @PostMapping(consumes = "multipart/form-data")
+    public ResponseEntity<ApiResponseDTO<ClubDTO>> createClub(
+            @RequestParam("clubName") String clubName,
+            @RequestParam("description") String description,
+            @RequestParam("noOfMembers") int noOfMembers,
+            @RequestParam("availableSlots") int availableSlots,
+            @RequestParam("totalSlots") int totalSlots,
+            @RequestParam("adminId") Long adminId,
+            @RequestParam(value = "image", required = false) MultipartFile image) {
+
+        ClubDTO clubDTO = new ClubDTO();
+        clubDTO.setClubName(clubName);
+        clubDTO.setDescription(description);
+        clubDTO.setNoOfMembers(noOfMembers);
+        clubDTO.setAvailableSlots(availableSlots);
+        clubDTO.setTotalSlots(totalSlots);
+        clubDTO.setAdminId(adminId);
+        clubDTO.setImage(image);
+
+        ClubDTO savedClubDTO = clubService.createClubWithImage(clubDTO);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new ApiResponseDTO<>("Club created successfully", savedClub));
+                .body(new ApiResponseDTO<>("Club created successfully", savedClubDTO));
     }
 
     /**
+     * Updates an existing club.
      *
      * @param id
-     * @param updatedClubDTO
-     * @return
+     * @param
+     * @return Updated ClubDTO.
      */
-    @PutMapping("/{id}")
-    public ResponseEntity<ApiResponseDTO> updateClub(@PathVariable Long id,
-                                                     @Validated @RequestBody ClubDTO updatedClubDTO) {
-        try {
-            Club updatedClub = clubService.updateClubFromDTO(id, updatedClubDTO);
-            return ResponseEntity.ok(new ApiResponseDTO("Club updated successfully", updatedClub));
-        } catch (ClubNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(new ApiResponseDTO("Error: Club with ID " + id + " not found", null));
-        }
+    @PutMapping(value = "/{id}", consumes = "multipart/form-data")
+    public ResponseEntity<ApiResponseDTO<ClubDTO>> updateClub(
+            @PathVariable Long id,
+            @RequestParam("clubName") String clubName,
+            @RequestParam("description") String description,
+            @RequestParam("noOfMembers") int noOfMembers,
+            @RequestParam("availableSlots") int availableSlots,
+            @RequestParam("totalSlots") int totalSlots,
+            @RequestParam("adminId") Long adminId,
+            @RequestParam(value = "image", required = false) MultipartFile image) throws ClubNotFoundException {
+        ClubDTO clubDTO = new ClubDTO();
+        clubDTO.setClubName(clubName);
+        clubDTO.setDescription(description);
+        clubDTO.setNoOfMembers(noOfMembers);
+        clubDTO.setAvailableSlots(availableSlots);
+        clubDTO.setTotalSlots(totalSlots);
+        clubDTO.setAdminId(adminId);
+        return ResponseEntity.ok(
+                new ApiResponseDTO<>("Club updated successfully",
+                        clubService.updateClubFromDTO(id, clubDTO, image))
+        );
     }
 
+
     /**
+     * Deletes a club.
      *
      * @param id
-     * @return
+     * @return Deletion status message.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponseDTO> deleteClub(@PathVariable Long id) {
+    public ResponseEntity<ApiResponseDTO<String>> deleteClub(@PathVariable Long id) {
         try {
             clubService.deleteClub(id);
-            return ResponseEntity.ok(new ApiResponseDTO("Club with ID " + id + " has been successfully deleted.",null));
+            return ResponseEntity.ok(new ApiResponseDTO<>("Club with ID " + id + " has been successfully deleted.", null));
         } catch (ClubNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(new ApiResponseDTO("Error: Club with ID " + id + " not found.",null));
+                    .body(new ApiResponseDTO<>("Error: Club with ID " + id + " not found.", null));
         }
     }
 }
