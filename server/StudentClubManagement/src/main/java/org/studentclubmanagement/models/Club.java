@@ -35,6 +35,11 @@ public class Club {
     @JoinColumn(name = "club_admin_user_id")
     private User clubAdmin;
 
+    // Store image as byte array (BLOB)
+    @Lob
+    @Column(name = "image", columnDefinition = "LONGBLOB")
+    private byte[] image;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -74,6 +79,13 @@ public class Club {
     }
 
     // Getters and Setters
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
 
 
     public User getClubAdmin() {

@@ -56,8 +56,33 @@ public class ClubRequestController {
         // Convert to DTOs
         List<ClubRequestDTO> responseDTOs = requests.stream()
                 .map(req -> new ClubRequestDTO(req.getUser().getUserId(),
+                        req.getClub().getClubName(),
                         req.getClub().getClubId(),
-                        req.getComment()))
+                        req.getComment(),
+                        req.getStatus(),
+                        req.getCreatedAt(),
+                        req.getUpdatedAt()))
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(new ApiResponseDTO<>("Club requests fetched successfully", responseDTOs));
+    }
+
+    /**
+     * Get all pending club requests for a specific club (Admin view)
+     */
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<ApiResponseDTO<List<ClubRequestDTO>>> getClubRequestsByUser(@PathVariable Long userId) {
+        List<ClubRequest> requests = clubRequestService.getClubRequestsByUserId(userId);
+
+        // Convert to DTOs
+        List<ClubRequestDTO> responseDTOs = requests.stream()
+                .map(req -> new ClubRequestDTO(req.getUser().getUserId(),
+                        req.getClub().getClubName(),
+                        req.getClub().getClubId(),
+                        req.getComment(),
+                        req.getStatus(),
+                        req.getCreatedAt(),
+                        req.getUpdatedAt()))
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(new ApiResponseDTO<>("Club requests fetched successfully", responseDTOs));

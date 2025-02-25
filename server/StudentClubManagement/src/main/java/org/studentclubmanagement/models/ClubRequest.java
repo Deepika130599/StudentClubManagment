@@ -1,5 +1,6 @@
 package org.studentclubmanagement.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.time.LocalDateTime;
@@ -12,10 +13,12 @@ public class ClubRequest {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "club_id", nullable = false)
+    @JsonIgnore
     private Club club;
 
     @NotBlank(message = "Comment is mandatory")

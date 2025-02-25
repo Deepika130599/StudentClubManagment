@@ -4,8 +4,10 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 public class ClubDTO {
+
     @NotBlank(message = "Club Name is mandatory")
     @Size(max = 100, message = "Club Name must be less than 100 characters")
     private String clubName;
@@ -25,6 +27,16 @@ public class ClubDTO {
 
     @NotNull(message = "Admin ID is mandatory")
     private Long adminId;
+    // ClubAdmin Details
+    private String clubAdminFirstName;
+    private String clubAdminLastName;
+
+
+    // Handle image as MultipartFile for upload
+    private MultipartFile image;
+
+    // New Field for Base64-encoded Image URL (For GET APIs)
+    private String imageUrl;
 
     // Constructors
     public ClubDTO() {}
@@ -85,5 +97,37 @@ public class ClubDTO {
 
     public void setAdminId(Long adminId) {
         this.adminId = adminId;
+    }
+
+    public MultipartFile getImage() {
+        return image;
+    }
+
+    public void setImage(MultipartFile image) {
+        this.image = image;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getClubAdminFirstName() {
+        return clubAdminFirstName;
+    }
+
+    public void setClubAdminFirstName(String clubAdminFirstName) {
+        this.clubAdminFirstName = clubAdminFirstName;
+    }
+
+    public String getClubAdminLastName() {
+        return clubAdminLastName;
+    }
+
+    public void setClubAdminLastName(String clubAdminLastName) {
+        this.clubAdminLastName = clubAdminLastName;
     }
 }

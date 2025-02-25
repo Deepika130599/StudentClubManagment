@@ -92,4 +92,8 @@ public class ClubRequestService {
         clubRequest.setStatus(RequestStatus.REJECTED);
         clubRequestRepository.save(clubRequest);
     }
+
+    public List<ClubRequest> getClubRequestsByUserId(Long userId) {
+        return clubRequestRepository.findByUser_UserId(userId);
+    }
 }
