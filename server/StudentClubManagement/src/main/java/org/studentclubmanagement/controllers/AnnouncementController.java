@@ -1,5 +1,7 @@
 package org.studentclubmanagement.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +16,9 @@ import org.studentclubmanagement.services.AnnouncementService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/announcements")
+@RequestMapping("/announcements")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@Tag(name = "Announcement APIs", description = "Operations related to announcements or events of clubs.")
+@Tag(name = "Announcement APIs", description = "APIs for managing club announcements, allowing creation and retrieval of announcements for specific clubs.")
 public class AnnouncementController {
 
     private final AnnouncementService announcementService;
@@ -26,20 +28,44 @@ public class AnnouncementController {
     }
 
     /**
-     * Create an Announcement
+     * Creates a new announcement for a club.
+     *
+     * @param announcementDTO The announcement details including club ID, message, and date.
+     * @return A response entity containing a success message and the created announcement.
+     * @throws ClubNotFoundException If the specified club does not exist.
+     * @throws UnauthorizedActionException If the user is not authorized to create an announcement.
      */
     @PostMapping
-    public ResponseEntity<ApiResponseDTO<Announcement>> createAnnouncement(@RequestBody AnnouncementDTO announcementDTO) throws ClubNotFoundException, UnauthorizedActionException {
+    @Operation(
+        summary = "Create an Announcement",
+        description = "Allows club admins to create an announcement for their respective clubs."
+    )
+    public ResponseEntity<ApiResponseDTO<Announcement>> createAnnouncement(@RequestBody AnnouncementDTO announcementDTO)
+            throws ClubNotFoundException, UnauthorizedActionException {
         Announcement announcement = announcementService.createAnnouncement(announcementDTO);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ApiResponseDTO<>("Announcement posted successfully", announcement));
     }
 
     /**
-     * Get Announcements for a Club
+     * Retrieves all announcements for a specific club.
+     *
+     * @param clubId The unique ID of the club whose announcements need to be fetched.
+     * @return A response entity containing a list of announcements for the specified club.
      */
     @GetMapping("/{clubId}")
-    public ResponseEntity<ApiResponseDTO<List<Announcement>>> getAnnouncementsByClub(@PathVariable Long clubId) {
+    @Operation(
+        summary = "Get Announcements for a Club",
+        description = "Fetches all announcements associated with a specific club ID."
+    )
+    public ResponseEntity<ApiResponseDTO<List<Announcement>>> getAnnouncementsByClub(
+        @Parameter(
+            description = "The unique ID of the club whose announcements need to be retrieved",
+            required = true,
+            example = "1"
+        )
+        @PathVariable Long clubId
+    ) {
         List<Announcement> announcements = announcementService.getAnnouncementsByClub(clubId);
         return ResponseEntity.ok(new ApiResponseDTO<>("Announcements fetched successfully", announcements));
     }
