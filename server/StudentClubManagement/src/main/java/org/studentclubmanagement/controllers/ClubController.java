@@ -1,11 +1,12 @@
 package org.studentclubmanagement.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.studentclubmanagement.dtos.ApiResponseDTO;
@@ -17,9 +18,9 @@ import org.studentclubmanagement.services.ClubService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/club")
+@RequestMapping("/club")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@Tag(name = "Club APIs", description = "Operations related to clubs.")
+@Tag(name = "Club APIs", description = "APIs for managing clubs, including creating, updating, retrieving, and deleting club records.")
 public class ClubController {
 
     @Autowired
@@ -31,18 +32,30 @@ public class ClubController {
      * @return List of ClubDTOs wrapped in ApiResponseDTO.
      */
     @GetMapping
+    @Operation(
+        summary = "Get All Clubs",
+        description = "Fetches a list of all clubs available in the system."
+    )
     public ResponseEntity<ApiResponseDTO<List<ClubDTO>>> getAllClubs() {
         List<ClubDTO> clubDTOs = clubService.getAllClubs();
         return ResponseEntity.ok(new ApiResponseDTO<>("Clubs retrieved successfully", clubDTOs));
     }
 
     /**
+     * Retrieves a club by its unique ID.
      *
-     * @param id
-     * @return ClubDTO by clubId
+     * @param id The ID of the club.
+     * @return The corresponding ClubDTO if found, otherwise a not found response.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponseDTO<ClubDTO>> getClubById(@PathVariable Long id) {
+    @Operation(
+        summary = "Get Club by ID",
+        description = "Fetches details of a specific club by its unique ID."
+    )
+    public ResponseEntity<ApiResponseDTO<ClubDTO>> getClubById(
+        @Parameter(description = "The unique ID of the club to retrieve", required = true, example = "1")
+        @PathVariable Long id
+    ) {
         try {
             ClubDTO clubDTO = clubService.getClubByIdWithImage(id);
             return ResponseEntity.ok(new ApiResponseDTO<>("Club retrieved successfully", clubDTO));
@@ -53,12 +66,20 @@ public class ClubController {
     }
 
     /**
+     * Retrieves a club by its name.
      *
-     * @param clubName
-     * @return ClubDTO by clubName
+     * @param clubName The name of the club.
+     * @return The corresponding ClubDTO if found, otherwise a not found response.
      */
     @GetMapping("/getClubByName")
-    public ResponseEntity<ApiResponseDTO<ClubDTO>> getClubByName(@RequestParam String clubName) {
+    @Operation(
+        summary = "Get Club by Name",
+        description = "Fetches details of a specific club by its name."
+    )
+    public ResponseEntity<ApiResponseDTO<ClubDTO>> getClubByName(
+        @Parameter(description = "The name of the club to retrieve", required = true, example = "Science Club")
+        @RequestParam String clubName
+    ) {
         try {
             ClubDTO clubDTO = clubService.findClubByNameWithImage(clubName);
             return ResponseEntity.ok(new ApiResponseDTO<>("Club retrieved successfully", clubDTO));
@@ -69,18 +90,22 @@ public class ClubController {
     }
 
     /**
-     * Creates a new club in the club entity.
+     * Creates a new club.
      *
-     * @param clubName
-     * @param description
-     * @param noOfMembers
-     * @param availableSlots
-     * @param totalSlots
-     * @param adminId
-     * @param image
-     * @return ClubDTO of the newly created club.
+     * @param clubName The name of the club.
+     * @param description The club's description.
+     * @param noOfMembers The current number of members.
+     * @param availableSlots The number of available slots for new members.
+     * @param totalSlots The total slots available in the club.
+     * @param adminId The ID of the club admin.
+     * @param image The club's image (optional).
+     * @return The newly created ClubDTO.
      */
     @PostMapping(consumes = "multipart/form-data")
+    @Operation(
+        summary = "Create a New Club",
+        description = "Allows the creation of a new club with details including name, description, slots, admin, and an optional image."
+    )
     public ResponseEntity<ApiResponseDTO<ClubDTO>> createClub(
             @RequestParam("clubName") String clubName,
             @RequestParam("description") String description,
@@ -107,20 +132,32 @@ public class ClubController {
     /**
      * Updates an existing club.
      *
-     * @param id
-     * @param
-     * @return Updated ClubDTO.
+     * @param id The ID of the club to be updated.
+     * @param clubName The new name of the club.
+     * @param description The updated description.
+     * @param noOfMembers The updated number of members.
+     * @param availableSlots The updated number of available slots.
+     * @param totalSlots The updated total slots.
+     * @param adminId The updated club admin ID.
+     * @param image The updated club image (optional).
+     * @return The updated ClubDTO.
      */
     @PutMapping(value = "/{id}", consumes = "multipart/form-data")
+    @Operation(
+        summary = "Update an Existing Club",
+        description = "Updates club details such as name, description, slots, and optionally its image."
+    )
     public ResponseEntity<ApiResponseDTO<ClubDTO>> updateClub(
-            @PathVariable Long id,
-            @RequestParam("clubName") String clubName,
-            @RequestParam("description") String description,
-            @RequestParam("noOfMembers") int noOfMembers,
-            @RequestParam("availableSlots") int availableSlots,
-            @RequestParam("totalSlots") int totalSlots,
-            @RequestParam("adminId") Long adminId,
-            @RequestParam(value = "image", required = false) MultipartFile image) throws ClubNotFoundException {
+        @Parameter(description = "The unique ID of the club to update", required = true, example = "1")
+        @PathVariable Long id,
+        @RequestParam("clubName") String clubName,
+        @RequestParam("description") String description,
+        @RequestParam("noOfMembers") int noOfMembers,
+        @RequestParam("availableSlots") int availableSlots,
+        @RequestParam("totalSlots") int totalSlots,
+        @RequestParam("adminId") Long adminId,
+        @RequestParam(value = "image", required = false) MultipartFile image) throws ClubNotFoundException {
+
         ClubDTO clubDTO = new ClubDTO();
         clubDTO.setClubName(clubName);
         clubDTO.setDescription(description);
@@ -128,21 +165,28 @@ public class ClubController {
         clubDTO.setAvailableSlots(availableSlots);
         clubDTO.setTotalSlots(totalSlots);
         clubDTO.setAdminId(adminId);
+
         return ResponseEntity.ok(
                 new ApiResponseDTO<>("Club updated successfully",
                         clubService.updateClubFromDTO(id, clubDTO, image))
         );
     }
 
-
     /**
-     * Deletes a club.
+     * Deletes a club by its ID.
      *
-     * @param id
-     * @return Deletion status message.
+     * @param id The ID of the club to delete.
+     * @return A success or error message.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponseDTO<String>> deleteClub(@PathVariable Long id) {
+    @Operation(
+        summary = "Delete a Club",
+        description = "Deletes a club from the system by its ID."
+    )
+    public ResponseEntity<ApiResponseDTO<String>> deleteClub(
+        @Parameter(description = "The unique ID of the club to delete", required = true, example = "1")
+        @PathVariable Long id
+    ) {
         try {
             clubService.deleteClub(id);
             return ResponseEntity.ok(new ApiResponseDTO<>("Club with ID " + id + " has been successfully deleted.", null));

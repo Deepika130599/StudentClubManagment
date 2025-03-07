@@ -1,6 +1,10 @@
 package org.studentclubmanagement.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.studentclubmanagement.dtos.SignInRequestDTO;
@@ -11,11 +15,12 @@ import org.studentclubmanagement.models.User;
 import org.studentclubmanagement.repositories.UserRepository;
 import org.studentclubmanagement.exceptions.*;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -103,20 +108,6 @@ public class UserService {
         userRepository.delete(existingUser);
     }
 
-    public String authenticateUser(SignInRequestDTO signInRequestDTO) throws UserNotFoundException{
-        try{
-            User user = userRepository.findByEmail(signInRequestDTO.getEmail());
-            boolean flag = validatePassword(signInRequestDTO.getPassword(), user.getPassword());
-            return flag ? "Login Successful" : "Incorrect Password! Please try again";
-        } catch (Exception e) {
-            throw new UserNotFoundException("Incorrect Email Address");
-        }
-    }
-
-    public boolean validatePassword(String rawPassword, String encodedPassword) {
-        return passwordEncoder.matches(rawPassword, encodedPassword);
-    }
-
     public UserResponseDTO updateUserFromUserDTO(Long id, UserDTO userDTO) {
         User existingUser = getUserById(id);
         User updatedUser = updateUserByAdmin(userDTO, existingUser);
@@ -139,5 +130,38 @@ public class UserService {
                 .stream()
                 .map(this::getUserResponse)
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Load user by email for authentication (Spring Security)
+     */
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email);
+
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found with email: " + email);
+        }
+
+        // Convert role string into a list of SimpleGrantedAuthority
+        List<SimpleGrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
+
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(),
+                user.getPassword(),
+                authorities
+        );
+    }
+
+
+    /**
+     * Fetch user role by email
+     */
+    public String getUserRole(String email) {
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            throw new UsernameNotFoundException("User role not found for email: " + email);
+        }
+        return "ROLE_" + user.getRole();
     }
 }
